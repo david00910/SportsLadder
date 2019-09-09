@@ -22,7 +22,7 @@
                                         border-radius: 50%;
                                         width: 150px;
                                         height: 150px;" :src="'../images/gsd.jpg'"></router-link>
-                <a href="#"><h5 class="white-text center-align">Szia {{$auth.user()}}</h5></a>
+                <a href="#"><h5 class="white-text center-align">Szia {{$auth.user().first_name}}</h5></a>
 
             </div>
 

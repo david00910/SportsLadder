@@ -36257,7 +36257,7 @@ var render = function() {
               _vm._v(" "),
               _c("a", { attrs: { href: "#" } }, [
                 _c("h5", { staticClass: "white-text center-align" }, [
-                  _vm._v("Szia " + _vm._s(_vm.$auth.user()))
+                  _vm._v("Szia " + _vm._s(_vm.$auth.user().first_name))
                 ])
               ])
             ],
@@ -54090,8 +54090,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\MyLadder\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\MyLadder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\SportsLadder\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\SportsLadder\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
