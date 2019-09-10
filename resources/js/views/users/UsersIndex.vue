@@ -38,7 +38,7 @@
             <td>{{ user.ranking }}</td>
             <td>
                 <!-- Only if logged in user is admin-->
-                <router-link :to="{ name: 'users.edit', params: {id: user.id} }"><i class="small material-icons">settings  </i></router-link>
+                <router-link v-if="$auth.user().role === 'administrator'" :to="{ name: 'users.edit', params: {id: user.id} }"><i class="small material-icons">settings  </i></router-link>
 
                 <router-link :to="{ name: 'users.show', params: {id: user.id} }"><i class="small material-icons">info</i></router-link>
             </td>

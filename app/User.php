@@ -2,13 +2,18 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Models\Role;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-
+use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements JWTSubject
 {
+    use HasRoles;
     use Notifiable;
 
     /**
@@ -18,6 +23,7 @@ class User extends Authenticatable implements JWTSubject
      */
 
     protected $table = 'users';
+    protected $guard_name = 'api';
 
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'phone', 'gender'
@@ -57,7 +63,22 @@ class User extends Authenticatable implements JWTSubject
 
     public function getJWTCustomClaims()
     {
-        return [];
+        return [
+        ];
+    }
+
+    public function roles()    {
+        return $this->belongsToMany('App\Role', 'model_has_roles', 'model_id', 'role_id');
+    }
+
+    public function getAllPermissionsAttribute() {
+        $permissions = [];
+        foreach (Permission::all() as $permission) {
+            if (Auth::user()->can($permission->name)) {
+                $permissions[] = $permission->name;
+            }
+        }
+        return $permissions;
     }
 
 

@@ -12,7 +12,10 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "tymon/jwt-auth": "dev-develop"
+        "spatie/laravel-permission": "^3.0",
+        "thepinecode/policy": "^0.1.2",
+        "tymon/jwt-auth": "dev-develop",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

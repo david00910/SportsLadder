@@ -1,17 +1,17 @@
 import VueRouter from 'vue-router'
 
 
-import Register from './views/SignUp';
-import Login from './views/SignIn';
-import Hello from './views/Hello';
+import Register from './views/auth/SignUp';
+import Login from './views/auth/SignIn';
+import Dashboard from './views/admin/Dashboard';
 import Home from './views/Home';
-import UsersIndex from './views/UsersIndex';
-import UsersShow from './views/UsersShow';
-import UsersEdit from './views/UsersEdit';
-import NotFound from './views/NotFound';
-import ResultsIndex from './views/ResultsIndex';
-import ResultsShow from './views/ResultsShow';
-import NoPermission from './views/NoPermission';
+import UsersIndex from './views/users/UsersIndex';
+import UsersShow from './views/users/UsersShow';
+import UsersEdit from './views/users/UsersEdit';
+import NotFound from './views/layout/NotFound';
+import ResultsIndex from './views/results/ResultsIndex';
+import ResultsShow from './views/results/ResultsShow';
+import NoPermission from './views/layout/NoPermission';
 
 
 
@@ -49,11 +49,11 @@ const router = new VueRouter({
         // USER ROUTES
 
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
+            path: '/dashboard',
+            name: 'dashboard',
+            component: Dashboard,
             meta: {
-                auth: true
+                auth: undefined
             }
         },
 
@@ -64,7 +64,7 @@ const router = new VueRouter({
             name: 'users.index',
             component: UsersIndex,
             meta: {
-                auth: undefined
+                auth: true
             }
 
         },
@@ -92,7 +92,7 @@ const router = new VueRouter({
             name: 'results.index',
             component: ResultsIndex,
             meta: {
-                auth: true
+                auth: undefined
             }
         },
         {

@@ -22,7 +22,8 @@
                                         border-radius: 50%;
                                         width: 150px;
                                         height: 150px;" :src="'../images/gsd.jpg'"></router-link>
-                <a href="#"><h5 class="white-text center-align">Szia {{$auth.user().first_name}}</h5></a>
+                <a v-if="$auth.check()" href="#"><h5 class="white-text center-align">Szia {{$auth.user().user.first_name}}</h5>
+                <h6 class="white-text">{{$auth.user().role}}</h6></a>
 
             </div>
 
@@ -30,7 +31,7 @@
                 <li>
                     <div class="divider cyan accent-3"></div>
 
-                    <router-link id="resultButton" class="resultbtn cyan accent-3 black-text btn-large" style="border-radius: 25px;"
+                    <router-link v-if="$auth.check()" id="resultButton" class="resultbtn cyan accent-3 black-text btn-large" style="border-radius: 25px;"
                                  :to="{ name: 'results.index' }"><i
                         class="material-icons black-text" style="font-size:40px;">play_circle_filled_white</i>New
                         Result
@@ -49,18 +50,23 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="white-text" :to="{ name: 'users.index' }"><i class="material-icons white-text"
+                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'users.index' }"><i class="material-icons white-text"
                                                                                      style="font-size:36px;">supervised_user_circle</i>Players
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="white-text" :to="{ name: 'hello' }"><i class="material-icons white-text"
+                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'home' }"><i class="material-icons white-text"
                                                                                style="font-size:36px;">group_work</i>Clubs
                     </router-link>
                 </li>
                 <li>
-                    <router-link class="white-text" :to="{ name: 'hello' }"><i class="material-icons white-text"
+                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'hello' }"><i class="material-icons white-text"
                                                                                style="font-size:36px;">event</i>Events
+                    </router-link>
+                </li>
+                <li>
+                    <router-link  class="white-text" :to="{ name: 'home' }"><i class="material-icons white-text"
+                                                                                                    style="font-size:36px;">info</i>About
                     </router-link>
                 </li>
 
@@ -68,8 +74,8 @@
             <div class="divider cyan accent-3"></div>
             <ul>
 
-                <li v-if="$auth.check()">
-                    <router-link class="white-text" :to="{ name: 'hello' }"><i class="material-icons white-text"
+                <li v-if="$auth.check() && $auth.user().role === 'administrator'" >
+                    <router-link class="white-text" :to="{ name: 'dashboard' }"><i class="material-icons white-text"
                                                                                style="font-size:36px;">settings</i>ADMIN DASHBOARD
                     </router-link>
                 </li>
@@ -80,15 +86,16 @@
                                                                                style="font-size:36px;">exit_to_app</i>Logout</a>
                 </li>
 
-                <!--LOGOUT
-            <li v-if="$auth.check()">
-                <a class="white-text" href="#" @click.prevent="$auth.logout()"><i class="material-icons white-text"
-                                                                               style="font-size:36px;">exit_to_app</i>Log out</a>
-            </li>-->
 
                 <li v-if="!$auth.check()">
                     <router-link class="white-text" :to="{ name: 'login' }"><i class="material-icons white-text"
                                                                                style="font-size:36px;">person</i>Sign in
+                    </router-link>
+                </li>
+
+                <li v-if="!$auth.check()">
+                    <router-link class="white-text" :to="{ name: 'signup' }"><i class="material-icons white-text"
+                                                                               style="font-size:36px;">person</i>Sign up
                     </router-link>
                 </li>
 
@@ -110,9 +117,6 @@ import axios from 'axios';
              csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
              user: {
              },
-            roles: {
-
-            },
         }),
         mounted() {
 

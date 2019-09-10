@@ -447,17 +447,17 @@
     },
     {
         "name": "facade/ignition",
-        "version": "1.4.19",
-        "version_normalized": "1.4.19.0",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/facade/ignition.git",
-            "reference": "bf3b9938f39b7e8f6683702526b58553994d97ca"
+            "reference": "36a1e4ca0973ac8e5c8289ee31956bbaf8e6bb67"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/facade/ignition/zipball/bf3b9938f39b7e8f6683702526b58553994d97ca",
-            "reference": "bf3b9938f39b7e8f6683702526b58553994d97ca",
+            "url": "https://api.github.com/repos/facade/ignition/zipball/36a1e4ca0973ac8e5c8289ee31956bbaf8e6bb67",
+            "reference": "36a1e4ca0973ac8e5c8289ee31956bbaf8e6bb67",
             "shasum": ""
         },
         "require": {
@@ -481,7 +481,7 @@
         "suggest": {
             "laravel/telescope": "^2.0"
         },
-        "time": "2019-09-09T08:46:24+00:00",
+        "time": "2019-09-09T14:06:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3539,6 +3539,76 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "spatie/laravel-permission",
+        "version": "3.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spatie/laravel-permission.git",
+            "reference": "5bac2326fe73c7da9a3ae07dcf5fb44224e45f6f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/5bac2326fe73c7da9a3ae07dcf5fb44224e45f6f",
+            "reference": "5bac2326fe73c7da9a3ae07dcf5fb44224e45f6f",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/auth": "^5.8|^6.0",
+            "illuminate/container": "^5.8|^6.0",
+            "illuminate/contracts": "^5.8|^6.0",
+            "illuminate/database": "^5.8|^6.0",
+            "php": "^7.2"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.8",
+            "phpunit/phpunit": "^8.0",
+            "predis/predis": "^1.1"
+        },
+        "time": "2019-09-02T14:57:53+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Spatie\\Permission\\PermissionServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Spatie\\Permission\\": "src"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Freek Van der Herten",
+                "email": "freek@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Permission handling for Laravel 5.8 and up",
+        "homepage": "https://github.com/spatie/laravel-permission",
+        "keywords": [
+            "acl",
+            "laravel",
+            "permission",
+            "permissions",
+            "rbac",
+            "roles",
+            "security",
+            "spatie"
+        ]
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.2.1",
         "version_normalized": "6.2.1.0",
@@ -5065,6 +5135,58 @@
             "debug",
             "dump"
         ]
+    },
+    {
+        "name": "thepinecode/policy",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thepinecode/policy.git",
+            "reference": "7501ba3d94e728766e1bb452b2568189638e93f2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thepinecode/policy/zipball/7501ba3d94e728766e1bb452b2568189638e93f2",
+            "reference": "7501ba3d94e728766e1bb452b2568189638e93f2",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1"
+        },
+        "require-dev": {
+            "orchestra/database": "~3.8.0",
+            "orchestra/testbench": "~3.8.0"
+        },
+        "time": "2019-06-05T10:05:20+00:00",
+        "type": "project",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Pine\\Policy\\PolicyServiceProvider"
+                ]
+            },
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pine\\Policy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gergő D. Nagy",
+                "email": "hello@iamgergo.com"
+            }
+        ],
+        "description": "Using Laravel's authorization on the front-end."
     },
     {
         "name": "theseer/tokenizer",

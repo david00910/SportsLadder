@@ -4,8 +4,14 @@ use Illuminate\Http\Request;
 use Auth;
 use Validator;
 use App\User;
+use App\Role;
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['login', 'register']]);
+    }
+
     /**
      * Register a new user
      */
@@ -74,9 +80,20 @@ class AuthController extends Controller
     public function me(Request $request)
     {
         $user = User::find(Auth::user()->id);
+
+        $role = User::find(Auth::user()->id)->roles()->pluck('name');
+
+        foreach($role as $ro) {
+            $roleTo = $ro;
+        }
+
         return response()->json([
             'status' => 'success',
-            'data' => $user
+            'data' => array(
+                'user' => $user,
+                'role' => $roleTo
+            )
+
         ]);
     }
     /**

@@ -2,10 +2,289 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f703d8a-705f-45fb-ba23-9f054b921100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mixins/Roles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/auth/SignIn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SportsLadder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SportsLadder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResultsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResultsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/anime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/anime.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/cash.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/cash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/characterCounter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/characterCounter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/chips.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/chips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/collapsible.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/collapsible.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/forms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/materialbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/materialbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/parallax.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/parallax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/pushpin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/pushpin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/range.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/range.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/sidenav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/tapTarget.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/tapTarget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/timepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/timepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/toasts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/tooltip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_badges.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_chips.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_chips.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_collapsible.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_collapsible.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_color-classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_color-classes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_color-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_color-variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_datepicker.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_normalize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_pulse.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_pulse.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_sidenav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_sidenav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_table_of_contents.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_table_of_contents.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_timepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_timepicker.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_toast.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_toast.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_checkboxes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_checkboxes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_input-fields.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_input-fields.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_radio-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_radio-buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_range.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_range.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/materialize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/materialize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Navigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Navigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/layout/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Hello.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/admin/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/NoPermission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/layout/NoPermission.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/NotFound.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/layout/NotFound.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/users/Profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/ResultsIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/results/ResultsIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/ResultsShow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/results/ResultsShow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/SignIn.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/auth/SignUp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/UsersEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/users/UsersEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/UsersIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/users/UsersIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/UsersShow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/users/UsersShow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/.prettierignore" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/.prettierignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/.styleci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/config/flare.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/config/flare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/config/ignition.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/config/ignition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/compiled/ignition.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/compiled/ignition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/compiled/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/compiled/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/alert.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/alert.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/checkbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/checkbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/code.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/definition-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/definition-list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/link.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/link.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/scrollbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/scrollbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/solution.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/solution.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/stack.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/stack.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/tab.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/variant.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/utilities/variant.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/vendor/hljs.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/vendor/hljs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/vendor/sf-dump.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/css/vendor/sf-dump.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/Ignition.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/Ignition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/DebugEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/DebugEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/DumpEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/DumpEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/GlowEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/GlowEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/LogEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/LogEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/QueryEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/DebugTimeline/Events/QueryEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Details.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/ReportDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/ReportDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/CheckboxField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/CheckboxField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/CopyButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/CopyButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/DefinitionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/DefinitionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/DefinitionListRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/DefinitionListRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ErrorCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ErrorCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ExceptionClass.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ExceptionClass.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ExceptionMessage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ExceptionMessage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/FilePath.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/FilePath.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/LineNumber.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/LineNumber.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/MethodCall.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/MethodCall.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/OccurrenceDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/OccurrenceDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareLinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/ShareLinks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/editorUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Shared/editorUrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Solutions/SolutionCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Solutions/SolutionCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/FrameGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/FrameGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/Snippet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/Snippet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/Stack.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Stack/Stack.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Summary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Summary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/AppTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/AppTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/ContextTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/ContextTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/DebugTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/DebugTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/RequestTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/RequestTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/StackTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/StackTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/UserTab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/components/Tabs/UserTab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/__helpers__/createFlareErrorFrame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/__helpers__/createFlareErrorFrame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/allVendorFramesAreExpanded.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/allVendorFramesAreExpanded.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/createFrameGroups.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/createFrameGroups.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/getSelectedFrame.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/getSelectedFrame.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/__tests__/reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/allVendorFramesAreExpanded.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/allVendorFramesAreExpanded.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/createFrameGroups.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/createFrameGroups.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/getSelectedFrame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/selectors/getSelectedFrame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/js/stack/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/resources/views/errorPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/resources/views/errorPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Actions/ShareReportAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Actions/ShareReportAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Commands/TestCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Commands/TestCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelConsoleContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelConsoleContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelContextDetector.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelContextDetector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelRequestContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Context/LaravelRequestContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/Dump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/DumpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/DumpHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/DumpRecorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/DumpRecorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/HtmlDumper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/HtmlDumper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/MultiDumpHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/DumpRecorder/MultiDumpHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/ErrorPageHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/ErrorPageHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/IgnitionWhoopsHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/IgnitionWhoopsHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/Renderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/ErrorPage/Renderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/UnableToShareErrorException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/UnableToShareErrorException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/ViewException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/ViewException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/ViewExceptionWithSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Exceptions/ViewExceptionWithSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Facades/Flare.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Facades/Flare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ExecuteSolutionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ExecuteSolutionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/HealthCheckController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/HealthCheckController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ScriptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ScriptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ShareReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/ShareReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/StyleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Controllers/StyleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Middleware/IgnitionEnabled.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Middleware/IgnitionEnabled.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Requests/ExecuteSolutionRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Requests/ExecuteSolutionRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Requests/ShareReportRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Http/Requests/ShareReportRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Ignition.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Ignition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/IgnitionConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/IgnitionConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/IgnitionServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/IgnitionServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/LogRecorder/LogMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/LogRecorder/LogMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/LogRecorder/LogRecorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/LogRecorder/LogRecorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Logger/FlareHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Logger/FlareHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddDumps.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddDumps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddEnvironmentInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddEnvironmentInformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddGitInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddGitInformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddLogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddLogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddQueries.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddQueries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddSolutions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/AddSolutions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/SetNotifierName.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Middleware/SetNotifierName.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/QueryRecorder/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/QueryRecorder/Query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/QueryRecorder/QueryRecorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/QueryRecorder/QueryRecorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/BadMethodCallSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/BadMethodCallSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/DefaultDbNameSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/DefaultDbNameSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/IncorrectValetDbCredentialsSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/IncorrectValetDbCredentialsSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/InvalidRouteActionSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/InvalidRouteActionSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingAppKeySolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingAppKeySolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingImportSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingImportSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingPackageSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/MissingPackageSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/TableNotFoundSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/TableNotFoundSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/ViewNotFoundSolutionProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/SolutionProviders/ViewNotFoundSolutionProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/GenerateAppKeySolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/GenerateAppKeySolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/MissingPackageSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/MissingPackageSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/RunMigrationsSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/RunMigrationsSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SolutionTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SolutionTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SuggestImportSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SuggestImportSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SuggestUsingCorrectDbNameSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/SuggestUsingCorrectDbNameSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/UseDefaultValetDbCredentialsSolution.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Solutions/UseDefaultValetDbCredentialsSolution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/ComposerClassMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/ComposerClassMap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/Packagist/Package.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/Packagist/Package.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/Packagist/Packagist.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/Packagist/Packagist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/StringComparator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Support/StringComparator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Tabs/Tab.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Tabs/Tab.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Compilers/BladeSourceMapCompiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Compilers/BladeSourceMapCompiler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Concerns/CollectsViewExceptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Concerns/CollectsViewExceptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Engines/PhpEngine.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/src/Views/Engines/PhpEngine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/facade/ignition/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/facade/ignition/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/tymon/jwt-auth" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tymon/jwt-auth" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,29 +328,119 @@
     <session id="1743431089">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="5" />
+          <entry key="js" value="492" />
+          <entry key="json" value="2" />
+          <entry key="php" value="1624" />
+          <entry key="vue" value="2062" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="5" />
+          <entry key="Blade" value="189" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="492" />
+          <entry key="PHP" value="1435" />
+          <entry key="Vue.js" value="2062" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="11" />
+          <entry key="json" value="1" />
+          <entry key="php" value="22" />
+          <entry key="vue" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="2" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="11" />
+          <entry key="PHP" value="20" />
+          <entry key="Vue.js" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+            <state relative-caret-position="-576">
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/views/auth/SignIn.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/Navigation.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2449">
+              <caret line="57" column="91" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding>
+                <element signature="e#24#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="936">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/views/auth/SignUp.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="70" column="76" selection-start-line="70" selection-start-column="76" selection-end-line="70" selection-end-column="76" />
+              <folding>
+                <element signature="e#23#78#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,6 +454,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResultsController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/resources/js/policies/Gate.js" />
+        <option value="$PROJECT_DIR$/resources/js/policies/UserPolicy.js" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Permission.php" />
+        <option value="$PROJECT_DIR$/resources/js/mixins/Permissions.vue" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Role.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/js/mixins/Roles.vue" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/js/views/UsersIndex.vue" />
+        <option value="$PROJECT_DIR$/resources/js/views/SignIn.vue" />
+        <option value="$PROJECT_DIR$/resources/js/router.js" />
+        <option value="$PROJECT_DIR$/resources/js/components/Navigation.vue" />
       </list>
     </option>
   </component>
@@ -103,6 +492,9 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -196,13 +588,15 @@
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/thepinecode/policy" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="308" />
-    <option name="y" value="159" />
-    <option name="width" value="1494" />
-    <option name="height" value="919" />
+    <option name="x" value="307" />
+    <option name="y" value="158" />
+    <option name="width" value="1495" />
+    <option name="height" value="920" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -220,6 +614,36 @@
             <path>
               <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
               <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -227,6 +651,13 @@
               <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
@@ -234,6 +665,25 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SportsLadder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportsLadder" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,9 +694,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../squashLeaderboard/app/Http/Controllers/Api/ResultsController.php" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SportsLadder\resources\js\views\auth" />
+      <recent name="C:\xampp\htdocs\SportsLadder\resources\js\views" />
+      <recent name="C:\xampp\htdocs\SportsLadder\resources\js\views\results" />
+      <recent name="C:\xampp\htdocs\SportsLadder\resources\js\views\layout" />
+      <recent name="C:\xampp\htdocs\SportsLadder\resources\js\views\admin" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -272,22 +732,23 @@
       <updated>1568046180433</updated>
       <workItem from="1568046181621" duration="491000" />
       <workItem from="1568046806790" duration="120000" />
+      <workItem from="1568096653755" duration="25888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="611000" />
+    <option name="totallyTimeSpent" value="26499000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19296375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -297,7 +758,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22147651" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -314,7 +775,206 @@
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+          <caret line="4" column="29" selection-start-line="4" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../squashLeaderboard/app/Http/Controllers/Api/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../squashLeaderboard/app/Http/Controllers/Api/ResultsController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/admin/Dashboard.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/policies/UserPolicy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/policies/Gate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="162" column="51" lean-forward="true" selection-start-line="162" selection-start-column="51" selection-end-line="162" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphToMany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/mixins/Permissions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="70" column="76" selection-start-line="70" selection-start-column="76" selection-end-line="70" selection-end-column="76" />
+          <folding>
+            <element signature="e#23#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+          <folding>
+            <element signature="e#38#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/users/UsersIndex.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="40" column="73" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResultsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/mixins/Roles.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/users/UsersEdit.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-576">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/results/ResultsIndex.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/auth/SignUp.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#24#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/auth/SignIn.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Navigation.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2449">
+          <caret line="57" column="91" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="91" />
         </state>
       </provider>
     </entry>

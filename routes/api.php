@@ -16,24 +16,29 @@ use Illuminate\Http\Request;
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
         // Below mention routes are public, user can access those without any restriction.
+
         // Create New User
         Route::post('register', 'AuthController@register');
         // Login User
         Route::post('login', 'AuthController@login');
-        Route::get('users', 'UserController@index');
+
+        // Public leaderboard
+        Route::get('results', 'ResultsController@index');
+
 
         // Refresh the JWT Token
         Route::get('refresh', 'AuthController@refresh');
 
         // Below mention routes are available only for the authenticated users.
         Route::middleware('auth:api')->group(function () {
+
             // USERS
-            //Route::get('users', 'UserController@index');
+            Route::get('users', 'UserController@index');
             Route::get('user/{id}', 'UserController@show');
             Route::get('me', 'AuthController@me');
 
             // RESULTS
-            Route::get('results', 'ResultsController@index');
+
             Route::get('result/{id}', 'ResultsController@show');
 
 

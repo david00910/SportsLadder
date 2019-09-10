@@ -10,12 +10,15 @@ import axios from 'axios';
 import auth from './auth'
 import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'
-
-import App from './views/App';
-
+import App from './views/layout/App';
 import Navigation from './components/Navigation';
 import Pagination from './components/Pagination';
+
+import Roles from './mixins/Roles';
+Vue.mixin(Roles);
+
 Vue.component('pagination', Pagination);
+
 
 
 // Set Vue globally
@@ -25,10 +28,10 @@ Vue.router = router;
 Vue.use(VueRouter);
 
 // Set Vue authentication
-Vue.use(VueAxios, axios)
-axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api/v1`
+Vue.use(VueAxios, axios);
+axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api/v1`;
 
-Vue.use(VueAuth, auth)
+Vue.use(VueAuth, auth);
 
 const app = new Vue({
     el: '#app',
