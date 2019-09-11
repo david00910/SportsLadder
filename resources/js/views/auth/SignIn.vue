@@ -66,7 +66,7 @@
           },
           success: function() {
             // handle redirection
-            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 'administrator' ? 'hello' : '/';
+            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 'administrator' ? 'Dashboard' : '/';
             this.$router.push({name: redirectTo})
           },
           error: function() {

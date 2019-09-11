@@ -3,14 +3,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use App\User;
-use App\Role;
 class AuthController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['login', 'register']]);
-    }
+
 
     /**
      * Register a new user

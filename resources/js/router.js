@@ -11,6 +11,7 @@ import UsersEdit from './views/users/UsersEdit';
 import NotFound from './views/layout/NotFound';
 import ResultsIndex from './views/results/ResultsIndex';
 import ResultsShow from './views/results/ResultsShow';
+import ResultsCreate from './views/results/ResultsCreate';
 import NoPermission from './views/layout/NoPermission';
 
 
@@ -46,7 +47,7 @@ const router = new VueRouter({
             }
         },
 
-        // USER ROUTES
+
 
         {
             path: '/dashboard',
@@ -77,7 +78,7 @@ const router = new VueRouter({
             }
         },
 
-        // ADMIN ROUTES
+
         {
             path: '/users/:id/edit',
             name: 'users.edit',
@@ -87,6 +88,7 @@ const router = new VueRouter({
             }
         },
 
+        //RESULTS
         {
             path: '/results',
             name: 'results.index',
@@ -103,6 +105,16 @@ const router = new VueRouter({
                 auth: true
             }
         },
+        {
+            path: '/results/create',
+            name: 'results.create',
+            component: ResultsCreate,
+            meta: {
+                auth: true
+            }
+        },
+
+        //MISC
         {
             path: '/403',
             name: '403',

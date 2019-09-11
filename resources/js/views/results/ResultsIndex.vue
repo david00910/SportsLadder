@@ -37,7 +37,7 @@
             <td>{{ result.winner_id.first_name }} {{ result.winner_id.last_name}}</td>
             <td>{{ result.loser_id.first_name }} {{ result.loser_id.last_name }}</td>
             <td>{{ result.result }}</td>
-            <td>{{ result.date }}</td>
+            <td>{{ result.updated_at }}</td>
             <td class="linkShow"><router-link :to="{ name: 'results.show', params: {id: result.id} }"><i class="small material-icons">info</i></router-link></td>
           </tr>
         </tbody>

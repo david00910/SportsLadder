@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Result;
-
+use App\User;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ResultResource;
@@ -17,12 +18,12 @@ class ResultsController extends Controller
     }
 
 
-    public function index()
+    protected function index()
     {
 
        //return ResultResource::collection(Result::orderBy('date', 'DESC')->paginate(10));
 
-        $results = ResultResource::collection(Result::orderBy('date', 'DESC')->paginate(10));
+        $results = ResultResource::collection(Result::orderBy('updated_at', 'DESC')->paginate(10));
         $response = [
             'pagination' => [
                 'total' => $results->total(),
@@ -39,7 +40,7 @@ class ResultsController extends Controller
 
     }
 
-    public function show($id)
+    protected function show($id)
     {
         $result = Result::with('winners')->with('losers')->find($id);
         return response()->json([
@@ -47,12 +48,48 @@ class ResultsController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    protected function create() {
+
+        $users = User::orderBy('ranking', 'ASC')->get();
+
+        return response()->json($users);
+
+    }
+
+    protected function store(Request $request)
+    {
+
+        $request->validate([
+            'winner_id' => 'required',
+            'loser_id' => 'required',
+            'result' => 'required'
+        ]);
+
+        try {
+
+            $result = new Result;
+            $result->winner_id = $request->winner_id;
+            $result->loser_id = $request->loser_id;
+            $result->result = $request->result;
+            $result->save();
+
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'error' => $e->errors()
+            ], 400);
+
+        }
+
+        return response()->json(['status' => 'success', 'msg' => 'You have successfully saved the result of your match!'], 200);
+    }
+
+    protected function update(Request $request)
     {
 
     }
 
-    public function destroy(User $user)
+    protected function destroy()
     {
 
     }

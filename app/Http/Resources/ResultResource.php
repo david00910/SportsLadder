@@ -20,7 +20,7 @@ class ResultResource extends JsonResource
             'winner_id' => $this->winners,
             'loser_id' => $this->losers,
             'result' => $this->result,
-            'date' => $this->date,
+            'updated_at' => $this->updated_at,
         ];
     }
 }

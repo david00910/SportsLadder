@@ -17,6 +17,9 @@ Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
         // Below mention routes are public, user can access those without any restriction.
 
+        // Refresh the JWT Token
+
+        Route::get('refresh', 'AuthController@refresh');
         // Create New User
         Route::post('register', 'AuthController@register');
         // Login User
@@ -26,8 +29,7 @@ Route::prefix('v1')->group(function () {
         Route::get('results', 'ResultsController@index');
 
 
-        // Refresh the JWT Token
-        Route::get('refresh', 'AuthController@refresh');
+
 
         // Below mention routes are available only for the authenticated users.
         Route::middleware('auth:api')->group(function () {
@@ -40,6 +42,8 @@ Route::prefix('v1')->group(function () {
             // RESULTS
 
             Route::get('result/{id}', 'ResultsController@show');
+            Route::get('result/create/users', 'ResultsController@create');
+            Route::post('result/store', 'ResultsController@store');
 
 
             // LOGOUT

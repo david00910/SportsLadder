@@ -20,7 +20,6 @@ class CreateResultsTable extends Migration
             $table->bigInteger('loser_id')->unsigned();
             $table->foreign('loser_id')->references('id')->on('users');
             $table->string('result');
-            $table->dateTime('date');
             $table->timestamps();
         });
     }
