@@ -67,9 +67,7 @@ class User extends Authenticatable implements JWTSubject
         ];
     }
 
-    public function roles()    {
-        return $this->belongsToMany('App\Role', 'model_has_roles', 'model_id', 'role_id');
-    }
+
 
     public function getAllPermissionsAttribute() {
         $permissions = [];

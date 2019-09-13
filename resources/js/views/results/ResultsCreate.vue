@@ -80,6 +80,7 @@
                     </div>
                 </div>
                 <h6 class="cyan-text" v-if="output">{{output.msg}}</h6>
+                <h6 class="red-text" v-if="err">Error: {{err}}</h6>
             </form>
         </div>
     </div>
@@ -96,7 +97,8 @@
                 selectedLoser: '',
                 selectedResult: '',
                 output: '',
-                loading: false
+                loading: false,
+                err: ''
             }
         },
 
@@ -123,6 +125,7 @@
 
                     .then(response => {
                         this.output = response.data;
+                        this.err = response.data.err;
                         this.loading = false;
                     })
                     .catch(error => {

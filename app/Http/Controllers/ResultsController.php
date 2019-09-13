@@ -8,6 +8,11 @@ use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ResultResource;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
 
 class ResultsController extends Controller
 {
@@ -58,6 +63,8 @@ class ResultsController extends Controller
 
     protected function store(Request $request)
     {
+        $current = JWTAuth::parseToken()->authenticate();
+        $cu = $current->id;
 
         $request->validate([
             'winner_id' => 'required',
@@ -71,8 +78,13 @@ class ResultsController extends Controller
             $result->winner_id = $request->winner_id;
             $result->loser_id = $request->loser_id;
             $result->result = $request->result;
-            $result->save();
-
+            if($request->winner_id == $cu || $request->loser_id == $cu)  {
+                $result->save();
+            }
+            else {
+                return response()->json(['err' => 'You must be either the loser or the winner!',
+                    $request->winner_id, $request->loser_id, $cu]);
+            }
         } catch (Exception $e) {
             return response()->json([
                 'status' => 'error',

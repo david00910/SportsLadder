@@ -15,12 +15,11 @@ const config = {
     registerData: {
         url: 'auth/register',
         method: 'POST',
-        redirect: '/login'
     },
     loginData: {
         url: 'auth/login',
         method: 'POST',
-        redirect: '',
+        redirect: '/',
         fetchUser: true
     },
     logoutData: {

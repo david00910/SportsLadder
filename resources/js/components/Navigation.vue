@@ -66,7 +66,7 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'hello' }"><i
+                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'dashboard' }"><i
                         class="material-icons white-text"
                         style="font-size:36px;">event</i>Events
                     </router-link>

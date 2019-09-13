@@ -14,11 +14,14 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+
         $v = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email|unique:users',
             'password'  => 'required|min:3|confirmed',
+            'gender' => 'required',
+            'user_type' => 'required'
         ]);
         if ($v->fails())
         {
@@ -35,7 +38,12 @@ class AuthController extends Controller
             $user->last_name = $request->last_name;
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
+            $user->gender = $request->gender;
+            $user->ranking = 0;
+            $user->user_type = $request->user_type;
+            $user->assignRole('player');
             $user->save();
+
 
         }
 
@@ -46,6 +54,8 @@ class AuthController extends Controller
             ], 400);
 
         }
+
+
 
         return response()->json(['status' => 'success'], 200);
     }
@@ -100,7 +110,7 @@ class AuthController extends Controller
     {
         if ($token = $this->guard()->refresh()) {
             return response()
-                ->json(['status' => 'successs'], 200)
+                ->json(['status' => 'success'], 200)
                 ->header('Authorization', $token);
         }
         return response()->json(['error' => 'refresh_token_error'], 401);

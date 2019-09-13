@@ -13,13 +13,12 @@ import VueAxios from 'vue-axios'
 import App from './views/layout/App';
 import Navigation from './components/Navigation';
 import Pagination from './components/Pagination';
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.css';
+
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
 
 Vue.component('v-select', vSelect);
-Vue.use(VueMaterial);
+
 import Roles from './mixins/Roles';
 Vue.mixin(Roles);
 
