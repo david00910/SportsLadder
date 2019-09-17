@@ -12,6 +12,7 @@ import NotFound from './views/layout/NotFound';
 import ResultsIndex from './views/results/ResultsIndex';
 import ResultsShow from './views/results/ResultsShow';
 import ResultsCreate from './views/results/ResultsCreate';
+import ClubsIndex from "./views/clubs/ClubsIndex";
 import NoPermission from './views/layout/NoPermission';
 
 
@@ -58,7 +59,7 @@ const router = new VueRouter({
             }
         },
 
-
+        // USERS
 
         {
             path: '/users',
@@ -112,6 +113,17 @@ const router = new VueRouter({
             meta: {
                 auth: true
             }
+        },
+
+        // CLUBS
+
+        {
+          path: '/clubs',
+          name: 'clubs.index',
+          component: ClubsIndex,
+          meta: {
+              auth: true
+          }
         },
 
         //MISC

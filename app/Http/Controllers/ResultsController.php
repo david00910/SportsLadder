@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Carbon\Carbon;
 
 
 class ResultsController extends Controller
@@ -78,14 +79,52 @@ class ResultsController extends Controller
             $result->winner_id = $request->winner_id;
             $result->loser_id = $request->loser_id;
             $result->result = $request->result;
-            if($request->winner_id == $cu || $request->loser_id == $cu)  {
+
+            if($current->hasRole('administrator')) {
                 $result->save();
             }
             else {
-                return response()->json(['err' => 'You must be either the loser or the winner!',
-                    $request->winner_id, $request->loser_id, $cu]);
+                if ($request->winner_id == $cu || $request->loser_id == $cu) {
+                    if ($request->winner_id == $cu && $request->loser_id == $cu) {
+                        return response()->json(['err' => 'You can not play against yourself!']);
+                    } else {
+                        $result->save();
+                    }
+
+                } else {
+                    return response()->json(['err' => 'You must be either the loser or the winner!',
+                        $request->winner_id, $request->loser_id, $cu]);
+                }
             }
-        } catch (Exception $e) {
+
+            $winner = User::find($request->winner_id);
+            $loser = User::find($request->loser_id);
+
+            $tempL = $winner->ranking;
+
+            if ($winner->ranking > $loser->ranking) {
+                $winner->ranking = $loser->ranking;
+                $loser->ranking++;
+                $winner->save();
+                $loser->save();
+               // $userC = User::count();
+                $allUsers = User::where([
+                    ['id', '!=', $winner->id],
+                    ['id', '!=', $loser->id],
+                    ['ranking', '<', $tempL],
+                    ['ranking', '>', $winner->ranking ]
+                ])->get();
+                foreach($allUsers as $user) {
+                        $user->ranking++;
+                        $user->save();
+
+                }
+
+            }
+
+        }
+
+        catch (Exception $e) {
             return response()->json([
                 'status' => 'error',
                 'error' => $e->errors()

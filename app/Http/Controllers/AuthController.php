@@ -14,6 +14,7 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+        $userCount = User::count();
 
         $v = Validator::make($request->all(), [
             'first_name' => 'required',
@@ -39,7 +40,7 @@ class AuthController extends Controller
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
             $user->gender = $request->gender;
-            $user->ranking = 0;
+            $user->ranking = $userCount+1;
             $user->user_type = $request->user_type;
             $user->assignRole('player');
             $user->save();

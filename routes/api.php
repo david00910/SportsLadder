@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClubController;
 use Illuminate\Http\Request;
 
 /*
@@ -45,6 +46,10 @@ Route::prefix('v1')->group(function () {
             Route::get('result/create/users', 'ResultsController@create');
             Route::post('result/store', 'ResultsController@store');
 
+
+            // CLUBS
+
+            Route::get('clubs', 'ClubController@index');
 
             // LOGOUT
             Route::post('logout', 'AuthController@logout');

@@ -3,9 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Carbon;
 
-class ResultResource extends JsonResource
+class ClubResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,10 +17,11 @@ class ResultResource extends JsonResource
         return [
 
             'id' => $this->id,
-            'winner_id' => $this->winners,
-            'loser_id' => $this->losers,
-            'result' => $this->result,
-            'updated_at' => $this->updated_at->toDateTimeString()
+            'name' => $this->name,
+            'address_id' => $this->addresses,
+            'foundation_date' => $this->foundation_date,
+            'owner' => $this->users,
+            'created_at' => $this->created_at->toDateTimeString()
         ];
     }
 }

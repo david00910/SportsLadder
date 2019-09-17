@@ -50,17 +50,17 @@
                 </li>
                 <li>
                     <router-link class="white-text" :to="{ name: 'results.index' }"><i class="material-icons white-text"
-                                                                                       style="font-size:36px;">assignment</i>Leaderboard
+                                                                                       style="font-size:36px;">assignment</i>Match results
                     </router-link>
                 </li>
                 <li>
                     <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'users.index' }"><i
                         class="material-icons white-text"
-                        style="font-size:36px;">supervised_user_circle</i>Players
+                        style="font-size:36px;">supervised_user_circle</i>Leaderboard
                     </router-link>
                 </li>
                 <li>
-                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'home' }"><i
+                    <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'clubs.index' }"><i
                         class="material-icons white-text"
                         style="font-size:36px;">group_work</i>Clubs
                     </router-link>

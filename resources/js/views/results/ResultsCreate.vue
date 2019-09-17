@@ -1,6 +1,6 @@
 <template>
 
-    <div class="white-text" >
+    <div class="white-text">
 
         <div class="row">
 
@@ -8,7 +8,11 @@
                 <div class="row">
 
                     <div class="input-field col s12 m6">
-                        <h6>Winner</h6>
+
+                        <h6 class="red-text" v-if="err">Winner</h6>
+
+                        <h6 v-else>Winner</h6>
+
                         <select v-model="selectedWinner" class="browser-default">
 
                             <option v-for="user in users" v-bind:value="{ wid: user.id}" value="">{{
@@ -26,7 +30,9 @@
                     </div>
 
                     <div class="input-field col s12 m6">
-                        <h6>Loser</h6>
+                        <h6 class="red-text" v-if="err">Loser</h6>
+
+                        <h6 v-else>Loser</h6>
                         <select v-model="selectedLoser" class="browser-default">
 
                             <option v-bind:value="{ lid: user.id}" v-for="user in users" value="" class="left">{{
