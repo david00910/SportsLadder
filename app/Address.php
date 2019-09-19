@@ -9,4 +9,9 @@ class Address extends Model
     protected $table = "address";
 
     protected $fillable = [''];
+
+    public function clubs() {
+        return $this->hasMany('App\Club');
+    }
+
 }

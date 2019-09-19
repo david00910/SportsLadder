@@ -5,11 +5,13 @@
                 <div class="spinner-layer spinner-cyan-only">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
-                    </div><div class="gap-patch">
-                    <div class="circle"></div>
-                </div><div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,25 +19,40 @@
         <div class="text-cyan text-accent-3">
 
             <div class="row">
+                <div class="col s12 m6">
+                <router-link v-if="$auth.check()" :to="{ name: 'results.create' }"><a class="waves-effect  blue accent-4 btn"><i
+                    class="material-icons left">add</i>Create</a>
+                </router-link>
+                </div>
+            </div>
+
+            <div class="row">
+
                 <div class="col s12 m6" v-for="club in clubs" v-bind:key="club.id">
-                    <div class="card blue-grey darken-1">
+
+
+                    <div class="card blue darken-2">
                         <div class="card-content white-text">
                             <span class="card-title">{{club.name}}</span>
-                            <small>Founded in {{club.foundation_date}} by {{club.owner.first_name + ' ' + club.owner.last_name}}</small>
-                            <p>{{club.address_id.country}}</p>
+                            <small>Established in {{club.foundation_date}}</small>
+                            <small>by {{club.owner.first_name + ' ' + club.owner.last_name}}</small>
+
                         </div>
                         <div class="card-action">
                             <a href="#">Manage (Admin)</a>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
-            <div class="divider cyan accent-3"></div>
+
         </div>
+        <div class="divider cyan accent-3"></div>
 
-
-        <pagination v-if="pagination.last_page > 1" :pagination="pagination" :offset="5" @paginate="getClubs()"></pagination>
+        <pagination v-if="pagination.last_page > 1" :pagination="pagination" :offset="5"
+                    @paginate="getClubs()"></pagination>
 
     </div>
 
@@ -56,18 +73,17 @@
         },
 
 
-
         methods: {
-            getClubs () {
+            getClubs() {
                 //const params = {page};
                 this.loading = true;
 
                 axios.get('auth/clubs?page=' + this.pagination.current_page)
                     .then(response => {
-                        this.clubs = response.data.data;
+                        this.clubs = response.data.data.data;
                         this.pagination = response.data.pagination;
                         this.loading = false;
-                    }) .catch(error => {
+                    }).catch(error => {
                     console.log(error.response.data);
                 });
             },

@@ -3553,6 +3553,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3571,7 +3588,7 @@ __webpack_require__.r(__webpack_exports__);
       //const params = {page};
       this.loading = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('auth/clubs?page=' + this.pagination.current_page).then(function (response) {
-        _this.clubs = response.data.data;
+        _this.clubs = response.data.data.data;
         _this.pagination = response.data.pagination;
         _this.loading = false;
       })["catch"](function (error) {
@@ -37735,29 +37752,57 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "text-cyan text-accent-3" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col s12 m6" },
+            [
+              _vm.$auth.check()
+                ? _c(
+                    "router-link",
+                    { attrs: { to: { name: "results.create" } } },
+                    [
+                      _c(
+                        "a",
+                        { staticClass: "waves-effect  blue accent-4 btn" },
+                        [
+                          _c("i", { staticClass: "material-icons left" }, [
+                            _vm._v("add")
+                          ]),
+                          _vm._v("Create")
+                        ]
+                      )
+                    ]
+                  )
+                : _vm._e()
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "row" },
           _vm._l(_vm.clubs, function(club) {
             return _c("div", { key: club.id, staticClass: "col s12 m6" }, [
-              _c("div", { staticClass: "card blue-grey darken-1" }, [
+              _c("div", { staticClass: "card blue darken-2" }, [
                 _c("div", { staticClass: "card-content white-text" }, [
                   _c("span", { staticClass: "card-title" }, [
                     _vm._v(_vm._s(club.name))
                   ]),
                   _vm._v(" "),
                   _c("small", [
+                    _vm._v("Established in " + _vm._s(club.foundation_date))
+                  ]),
+                  _vm._v(" "),
+                  _c("small", [
                     _vm._v(
-                      "Founded in " +
-                        _vm._s(club.foundation_date) +
-                        " by " +
+                      "by " +
                         _vm._s(
                           club.owner.first_name + " " + club.owner.last_name
                         )
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(club.address_id.country))])
+                  ])
                 ]),
                 _vm._v(" "),
                 _vm._m(1, true)
@@ -37765,10 +37810,10 @@ var render = function() {
             ])
           }),
           0
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "divider cyan accent-3" })
+        )
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "divider cyan accent-3" }),
       _vm._v(" "),
       _vm.pagination.last_page > 1
         ? _c("pagination", {
@@ -37794,9 +37839,11 @@ var staticRenderFns = [
         _c("div", { staticClass: "circle-clipper left" }, [
           _c("div", { staticClass: "circle" })
         ]),
+        _vm._v(" "),
         _c("div", { staticClass: "gap-patch" }, [
           _c("div", { staticClass: "circle" })
         ]),
+        _vm._v(" "),
         _c("div", { staticClass: "circle-clipper right" }, [
           _c("div", { staticClass: "circle" })
         ])

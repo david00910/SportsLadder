@@ -20,7 +20,7 @@ class ClubResource extends JsonResource
             'name' => $this->name,
             'address_id' => $this->addresses,
             'foundation_date' => $this->foundation_date,
-            'owner' => $this->users,
+            'owner' => $this->owner,
             'created_at' => $this->created_at->toDateTimeString()
         ];
     }

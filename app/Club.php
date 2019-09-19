@@ -14,12 +14,12 @@ class Club extends Model
         'foundation_date'
     ];
 
-    public function users() {
-        return $this->hasOne('App\User', 'id');
+    public function owner() {
+        return $this->belongsTo('App\User', 'owner');
     }
 
-    public function addresses() {
-        return $this->belongsTo('App\Address', 'address_id', 'id');
+    public function address() {
+        return $this->hasOne('App\Address', 'id');
     }
 
 }

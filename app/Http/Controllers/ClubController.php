@@ -20,7 +20,7 @@ class ClubController extends Controller
     protected function index() {
         try {
 
-            $clubs = Resource::collection(Club::orderBy('created_at', 'ASC')->paginate(8));
+            $clubs = Club::with(['owner', 'address'])->orderBy('created_at', 'ASC')->paginate(6);
             $response = [
                 'pagination' => [
                     'total' => $clubs->total(),
