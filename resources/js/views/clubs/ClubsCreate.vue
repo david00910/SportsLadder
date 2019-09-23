@@ -22,6 +22,68 @@
                         </div>
                     </div>
                 </div>
+
+                <h5 class="center cyan-text">Club Details</h5>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" type="text" name="name" class="validate" v-model="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="about" name="about" class="materialize-textarea white-text" v-model="about"></textarea>
+                        <label for="about">About</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="foundation_date" type="number" min="1830" :max="currentY" name="foundation_date" class="validate" v-model="foundation_date" required>
+
+                        <label for="foundation_date">Year of Establishment <small>(Between 1830-{{currentY}})</small></label>
+
+                    </div>
+                </div>
+
+                <h5 class="center cyan-text">Address</h5>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="street" type="text" name="street" class="validate" v-model="street" required>
+                        <label for="street">Street</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="zip" type="text" name="zip" class="validate" v-model="zip" required>
+                        <label for="zip">Postal Code</label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="city" type="text" name="city" class="validate" v-model="city" required>
+                        <label for="city">City</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="country" type="text" name="country" class="validate" v-model="country" required>
+                        <label for="country">Country</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect cyan accent-3 black-text" type="submit">Create
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+
+
                 <h6 class="cyan-text" v-if="output">{{output.msg}}</h6>
                 <h6 class="red-text" v-if="err">Error: {{err}}</h6>
             </form>
@@ -35,10 +97,14 @@
     export default {
         data() {
             return {
-                users: {},
-                selectedWinner: '',
-                selectedLoser: '',
-                selectedResult: '',
+                name:'',
+                about: '',
+                foundation_date: '',
+                street: '',
+                zip:'',
+                city:'',
+                country:'',
+                currentY: new Date().getFullYear(),
                 output: '',
                 loading: false,
                 err: ''
@@ -46,7 +112,6 @@
         },
 
         created() {
-            this.getUsers();
         },
 
         mounted() {
@@ -59,10 +124,14 @@
 
                 this.loading = true;
 
-                this.$http.post('auth/club/store', {
-                    winner_id: this.selectedWinner.wid,
-                    loser_id: this.selectedLoser.lid,
-                    result: this.selectedResult.result
+                this.$http.post('auth/clubs/store', {
+                    name: this.name,
+                    about: this.about,
+                    foundation_date: this.foundation_date,
+                    street: this.street,
+                    zip: this.zip,
+                    city: this.city,
+                    country: this.country
 
                 })
 

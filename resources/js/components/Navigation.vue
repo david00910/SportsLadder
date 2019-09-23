@@ -18,15 +18,17 @@
 
             <div class="container center-align" style="padding-top:15px;">
 
-                <router-link :to="{ name: 'home' }"><img class="responsive-img center-align z-depth-3"
+                <router-link :to="{ name: 'profile' }"><img class="responsive-img center-align z-depth-3"
                                                          style=" background-repeat: no-repeat;
                                         background-position: 50%;
                                         border-radius: 50%;
                                         width: 150px;
                                         height: 150px;" :src="'../images/gsd.jpg'"></router-link>
-                <a v-if="$auth.check()" href="#"><h5 class="white-text center-align">Szia
+
+                <router-link :to="{ name: 'profile' }" v-if="$auth.check()"><h5 class="white-text center-align">Hi
                     {{$auth.user().user.first_name}}</h5>
-                    <h6 class="white-text">{{$auth.user().role}}</h6></a>
+                    <h6 class="white-text">{{$auth.user().role}}</h6></router-link>
+
 
             </div>
 

@@ -38,7 +38,10 @@ Route::prefix('v1')->group(function () {
             // USERS
             Route::get('users', 'UserController@index');
             Route::get('user/{id}', 'UserController@show');
-            Route::get('me', 'AuthController@me');
+            Route::get('me', array(
+                'as' => 'me',
+                'uses' => 'AuthController@me',
+            ));
 
             // RESULTS
 
@@ -50,6 +53,7 @@ Route::prefix('v1')->group(function () {
             // CLUBS
 
             Route::get('clubs', 'ClubController@index');
+            Route::post('clubs/store', 'ClubController@store');
 
             // LOGOUT
             Route::post('logout', 'AuthController@logout');

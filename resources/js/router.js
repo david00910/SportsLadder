@@ -5,6 +5,7 @@ import Register from './views/auth/SignUp';
 import Login from './views/auth/SignIn';
 import Dashboard from './views/admin/Dashboard';
 import Home from './views/Home';
+import Profile from './views/auth/Profile'
 import UsersIndex from './views/users/UsersIndex';
 import UsersShow from './views/users/UsersShow';
 import UsersEdit from './views/users/UsersEdit';
@@ -13,6 +14,7 @@ import ResultsIndex from './views/results/ResultsIndex';
 import ResultsShow from './views/results/ResultsShow';
 import ResultsCreate from './views/results/ResultsCreate';
 import ClubsIndex from "./views/clubs/ClubsIndex";
+import ClubsCreate from "./views/clubs/ClubsCreate";
 import NoPermission from './views/layout/NoPermission';
 
 
@@ -61,6 +63,14 @@ const router = new VueRouter({
 
         // USERS
 
+        {
+          path:'/profile',
+          name: 'profile',
+          component: Profile,
+          meta: {
+              auth: true
+          }
+        },
         {
             path: '/users',
             name: 'users.index',
@@ -124,6 +134,14 @@ const router = new VueRouter({
           meta: {
               auth: true
           }
+        },
+        {
+            path: '/clubs/create',
+            name: 'clubs.create',
+            component: ClubsCreate,
+            meta: {
+                auth: true
+            }
         },
 
         //MISC

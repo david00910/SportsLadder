@@ -14,4 +14,8 @@ class Address extends Model
         return $this->hasMany('App\Club');
     }
 
+    public function zipcode() {
+        return $this->hasOne('App\ZipCode', 'pCode');
+    }
+
 }

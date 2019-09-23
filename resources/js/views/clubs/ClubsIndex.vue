@@ -20,7 +20,7 @@
 
             <div class="row">
                 <div class="col s12 m6">
-                <router-link v-if="$auth.check()" :to="{ name: 'results.create' }"><a class="waves-effect  blue accent-4 btn"><i
+                <router-link v-if="$auth.check()" :to="{ name: 'clubs.create' }"><a class="waves-effect  blue accent-4 btn"><i
                     class="material-icons left">add</i>Create</a>
                 </router-link>
                 </div>
