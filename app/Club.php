@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Address;
 
 class Club extends Model
 {
@@ -14,12 +15,13 @@ class Club extends Model
         'foundation_date'
     ];
 
-    public function owner() {
+    public function ownerUser() {
         return $this->belongsTo('App\User', 'owner');
     }
 
-    public function address() {
-        return $this->hasOne('App\Address', 'id');
+    public function clubAddress() {
+        return $this->belongsTo('App\Address', 'address_id')->with('zipcode');
     }
+
 
 }

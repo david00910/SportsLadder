@@ -19,7 +19,7 @@
             <div class="container center-align" style="padding-top:15px;">
 
                 <router-link :to="{ name: 'profile' }"><img class="responsive-img center-align z-depth-3"
-                                                         style=" background-repeat: no-repeat;
+                                                            style=" background-repeat: no-repeat;
                                         background-position: 50%;
                                         border-radius: 50%;
                                         width: 150px;
@@ -27,7 +27,12 @@
 
                 <router-link :to="{ name: 'profile' }" v-if="$auth.check()"><h5 class="white-text center-align">Hi
                     {{$auth.user().user.first_name}}</h5>
-                    <h6 class="white-text">{{$auth.user().role}}</h6></router-link>
+
+                    <h6 class="white-text" v-if="$auth.user().role === 'club_owner'">Owner of <br>
+                        <small>'{{$auth.user().owner.name}}'</small></h6>
+                    <h6 v-else-if="$auth.user().role === 'administrator'">Administrator</h6>
+                    <h6 v-else>{{$auth.user().role}}</h6>
+                </router-link>
 
 
             </div>
@@ -52,7 +57,8 @@
                 </li>
                 <li>
                     <router-link class="white-text" :to="{ name: 'results.index' }"><i class="material-icons white-text"
-                                                                                       style="font-size:36px;">assignment</i>Match results
+                                                                                       style="font-size:36px;">assignment</i>Match
+                        results
                     </router-link>
                 </li>
                 <li>

@@ -18,9 +18,10 @@ class ClubResource extends JsonResource
 
             'id' => $this->id,
             'name' => $this->name,
-            'address_id' => $this->addresses,
+            'address_id' => $this->clubAddress,
+            'about' => $this->about,
             'foundation_date' => $this->foundation_date,
-            'owner' => $this->owner,
+            'owner' => $this->ownerUser,
             'created_at' => $this->created_at->toDateTimeString()
         ];
     }

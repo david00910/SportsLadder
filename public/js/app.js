@@ -3141,6 +3141,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3265,6 +3271,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -3781,12 +3788,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       loading: false,
-      clubs: {},
+      clubs: '',
       pagination: {
         'current_page': 1
       }
@@ -3799,7 +3810,7 @@ __webpack_require__.r(__webpack_exports__);
       //const params = {page};
       this.loading = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('auth/clubs?page=' + this.pagination.current_page).then(function (response) {
-        _this.clubs = response.data.data.data;
+        _this.clubs = response.data.data;
         _this.pagination = response.data.pagination;
         _this.loading = false;
       })["catch"](function (error) {
@@ -36970,9 +36981,20 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("h6", { staticClass: "white-text" }, [
-                      _vm._v(_vm._s(_vm.$auth.user().role))
-                    ])
+                    _vm.$auth.user().role === "club_owner"
+                      ? _c("h6", { staticClass: "white-text" }, [
+                          _vm._v("Owner of "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("small", [
+                            _vm._v(
+                              "'" + _vm._s(_vm.$auth.user().owner.name) + "'"
+                            )
+                          ])
+                        ])
+                      : _vm.$auth.user().role === "administrator"
+                      ? _c("h6", [_vm._v("Administrator")])
+                      : _c("h6", [_vm._v(_vm._s(_vm.$auth.user().role))])
                   ])
                 : _vm._e()
             ],
@@ -37059,7 +37081,9 @@ var render = function() {
                       },
                       [_vm._v("assignment")]
                     ),
-                    _vm._v("Match results\n                ")
+                    _vm._v(
+                      "Match\n                    results\n                "
+                    )
                   ]
                 )
               ],
@@ -37486,9 +37510,14 @@ var render = function() {
                   attrs: { src: "./images/gsd.jpg" }
                 }),
                 _vm._v(" "),
-                _c("span", { staticClass: "card-title" }, [
-                  _vm._v("Card Title")
-                ])
+                _c(
+                  "span",
+                  {
+                    staticClass: "card-title",
+                    staticStyle: { "letter-spacing": "2px !important" }
+                  },
+                  [_vm._v("KOLOMPÁR BÉCI")]
+                )
               ]),
               _vm._v(" "),
               _vm._m(0),
@@ -37510,7 +37539,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-content" }, [
+    return _c("div", { staticClass: "card-content grey-text" }, [
       _c("p", [
         _vm._v(
           "I am a very simple card. I am good at containing small bits of information.\n                            I am convenient because I require little markup to use effectively."
@@ -38472,16 +38501,33 @@ var render = function() {
                     _vm._v(_vm._s(club.name))
                   ]),
                   _vm._v(" "),
-                  _c("small", [
-                    _vm._v("Established in " + _vm._s(club.foundation_date))
-                  ]),
-                  _vm._v(" "),
-                  _c("small", [
+                  _c("p", [
+                    _c("i", { staticClass: "material-icons" }, [
+                      _vm._v(
+                        "\n                            history\n                        "
+                      )
+                    ]),
                     _vm._v(
-                      "by " +
+                      " Established in " +
+                        _vm._s(club.foundation_date) +
+                        " by " +
                         _vm._s(
                           club.owner.first_name + " " + club.owner.last_name
                         )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", [
+                    _c("i", { staticClass: "material-icons" }, [
+                      _vm._v(
+                        "\n                            room\n                        "
+                      )
+                    ]),
+                    _vm._v(
+                      " " +
+                        _vm._s(club.address_id.zipcode.city) +
+                        ", " +
+                        _vm._s(club.address_id.country)
                     )
                   ])
                 ]),

@@ -55,6 +55,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany('App\Club','club_members', 'user_id', 'club_id');
     }
 
+    public function ownedClub() {
+        return $this->hasMany('App\Club', 'owner');
+    }
+
 
     public function getJWTIdentifier()
     {

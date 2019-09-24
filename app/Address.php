@@ -15,7 +15,7 @@ class Address extends Model
     }
 
     public function zipcode() {
-        return $this->hasOne('App\ZipCode', 'pCode');
+        return $this->belongsTo('App\ZipCode', 'pCode', 'zip');
     }
 
 }

@@ -34,9 +34,13 @@
                     <div class="card blue darken-2">
                         <div class="card-content white-text">
                             <span class="card-title">{{club.name}}</span>
-                            <small>Established in {{club.foundation_date}}</small>
-                            <small>by {{club.owner.first_name + ' ' + club.owner.last_name}}</small>
+                            <p><i class="material-icons">
+                                history
+                            </i> Established in {{club.foundation_date}} by {{club.owner.first_name + ' ' + club.owner.last_name}}</p>
 
+                            <h6><i class="material-icons">
+                                room
+                            </i> {{club.address_id.zipcode.city}}, {{club.address_id.country}}</h6>
                         </div>
                         <div class="card-action">
                             <a href="#">Manage (Admin)</a>
@@ -65,7 +69,7 @@
         data() {
             return {
                 loading: false,
-                clubs: {},
+                clubs: '',
                 pagination: {
                     'current_page': 1
                 }
@@ -80,7 +84,7 @@
 
                 axios.get('auth/clubs?page=' + this.pagination.current_page)
                     .then(response => {
-                        this.clubs = response.data.data.data;
+                        this.clubs = response.data.data;
                         this.pagination = response.data.pagination;
                         this.loading = false;
                     }).catch(error => {
