@@ -10,12 +10,12 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
+        "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "spatie/laravel-permission": "^3.0",
         "thepinecode/policy": "^0.1.2",
-        "tymon/jwt-auth": "dev-develop",
-        "zizaco/entrust": "5.2.x-dev"
+        "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

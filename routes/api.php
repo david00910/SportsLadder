@@ -53,6 +53,7 @@ Route::prefix('v1')->group(function () {
             // CLUBS
 
             Route::get('clubs', 'ClubController@index');
+            Route::get('club/{id}', 'ClubController@show');
             Route::post('clubs/store', 'ClubController@store');
 
             // LOGOUT

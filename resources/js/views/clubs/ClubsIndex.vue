@@ -1,5 +1,5 @@
 <template>
-    <div class="results">
+    <div class="clubs">
         <div class="preloader-background loading" v-if="loading">
             <div class="preloader-wrapper active">
                 <div class="spinner-layer spinner-cyan-only">
@@ -30,8 +30,12 @@
 
                 <div class="col s12 m6" v-for="club in clubs" v-bind:key="club.id">
 
-
+                    <router-link class="hover" :to="{ name: 'clubs.show', params: {id: club.id}}">
                     <div class="card blue darken-2">
+
+                            <div class="card-image">
+                                <img class="responsive-img" style="max-height:300px !important;" :src="'../images/gsd.jpg'" alt="">
+                            </div>
                         <div class="card-content white-text">
                             <span class="card-title">{{club.name}}</span>
                             <p><i class="material-icons">
@@ -42,11 +46,12 @@
                                 room
                             </i> {{club.address_id.zipcode.city}}, {{club.address_id.country}}</h6>
                         </div>
-                        <div class="card-action">
-                            <a href="#">Manage (Admin)</a>
+                        <div v-if="$auth.user().owner" class="card-action">
+                            <a v-if="$auth.user().role === 'administrator'" href="#">Manage</a>
+                            <a v-else-if="$auth.user().owner.id === club.id" href="#">Manage my club</a>
                         </div>
                     </div>
-
+                    </router-link>
 
                 </div>
             </div>

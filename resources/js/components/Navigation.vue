@@ -30,7 +30,7 @@
 
                     <h6 class="white-text" v-if="$auth.user().role === 'club_owner'">Owner of <br>
                         <small>'{{$auth.user().owner.name}}'</small></h6>
-                    <h6 v-else-if="$auth.user().role === 'administrator'">Administrator</h6>
+                    <h6 class="white-text" v-else-if="$auth.user().role === 'administrator'">Administrator</h6>
                     <h6 v-else>{{$auth.user().role}}</h6>
                 </router-link>
 

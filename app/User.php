@@ -52,7 +52,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function clubs() {
-        return $this->belongsToMany('App\Club','club_members', 'user_id', 'club_id');
+        return $this->belongsToMany('App\Club', 'club_members', 'user_id', 'club_id')->withPivot('doa');
     }
 
     public function ownedClub() {

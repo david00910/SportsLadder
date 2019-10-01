@@ -16,6 +16,10 @@ import Pagination from './components/Pagination';
 
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
+
 
 Vue.component('v-select', vSelect);
 
@@ -41,7 +45,7 @@ const app = new Vue({
     components: {
         App,
         Navigation,
-        Pagination
+        Pagination,
 
     },
 

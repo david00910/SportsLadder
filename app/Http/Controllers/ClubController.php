@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ClubMembers;
 use Carbon\Traits\Date;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,6 +12,7 @@ use App\Club;
 use App\Address;
 use App\ZipCode;
 use JWTAuth;
+use Intervention\Image;
 use DB;
 use App\Http\Resources\ClubResource;
 use Illuminate\Http\Resources\Json\Resource;
@@ -118,6 +120,14 @@ class ClubController extends Controller
         }
 
         return response()->json(['status' => 'success', 'msg' => 'You have successfully created your club!'], 200);
+    }
+
+    protected function show($id) {
+
+        $club = Club::with('clubAddress')->with('ownerUser')->with('clubMembers')->find($id);
+
+        return response()->json($club);
+
     }
 
 

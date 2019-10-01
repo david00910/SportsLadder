@@ -23,5 +23,8 @@ class Club extends Model
         return $this->belongsTo('App\Address', 'address_id')->with('zipcode');
     }
 
+    public function clubMembers() {
+        return $this->belongsToMany('App\User', 'club_members', 'club_id', 'user_id')->withPivot('doa');
+    }
 
 }

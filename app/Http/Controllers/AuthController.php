@@ -90,6 +90,7 @@ class AuthController extends Controller
         $user = User::find(Auth::user()->id);
 
         $role = User::find(Auth::user()->id)->roles()->pluck('name');
+
         $owner = User::find(Auth::user()->id)->ownedClub()->get();
 
         foreach($owner as  $ownerOf) {
@@ -100,15 +101,29 @@ class AuthController extends Controller
             $roleTo = $ro;
         }
 
-        return response()->json([
-            'status' => 'success',
-            'data' => array(
-                'user' => $user,
-                'role' => $roleTo,
-                'owner' => $ownedClub
-            )
+        if(isset($ownedClub)) {
 
-        ]);
+
+            return response()->json([
+                'status' => 'success',
+                'data' => array(
+                    'user' => $user,
+                    'role' => $roleTo,
+                    'owner' => $ownedClub
+                )
+
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 'success',
+                'data' => array(
+                    'user' => $user,
+                    'role' => $roleTo,
+                )
+
+            ]);
+        }
     }
     /**
      * Refresh JWT token
