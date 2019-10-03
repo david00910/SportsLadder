@@ -11,9 +11,11 @@ use App\Result;
 use App\Club;
 use App\Address;
 use App\ZipCode;
+use Illuminate\Support\Facades\Storage;
 use JWTAuth;
-use Intervention\Image;
+use Image;
 use DB;
+use File;
 use App\Http\Resources\ClubResource;
 use Illuminate\Http\Resources\Json\Resource;
 
@@ -27,7 +29,7 @@ class ClubController extends Controller
     protected function index() {
         try {
 
-            $clubs = ClubResource::collection(Club::orderBy('created_at', 'DESC')->paginate(8));
+            $clubs = ClubResource::collection(Club::orderBy('created_at', 'DESC')->paginate(6));
 
             $response = [
                 'pagination' => [
@@ -60,7 +62,7 @@ class ClubController extends Controller
             'street' => 'required',
             'zip' => 'required',
             'city' => 'required',
-            'country' => 'required'
+            'country' => 'required',
 
         ]);
 
@@ -99,6 +101,33 @@ class ClubController extends Controller
                 $club->address_id = $last_id;
                 $club->save();
 
+                // IMAGE HANDLING
+
+                if($request->get('image')) {
+                    $image = $request->get('image');
+                    $name = time() . '.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
+
+                    $tempImage = Image::make($image);
+
+                    $tempImage->resize(500, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                    })->orientate();
+
+                    $tempImage->save(public_path('images/').$name);
+
+                    $originalImagePath = 'storage/images/clubs/'.$club->id.'/'. $name;
+
+                    Storage::disk('local')->put('public/images/clubs/'.$club->id.'/'.$name, $tempImage);
+                    $tempPath = public_path('images/').$name;
+                    unlink($tempPath);
+
+                    $club->avatar_url = $originalImagePath;
+                    $club->save();
+
+
+
+                }
+
                 if ($currentUser->hasRole('player')) {
 
 
@@ -109,6 +138,8 @@ class ClubController extends Controller
             } else {
                 return response()->json(['err' => 'A club with the same name already exists..']);
             }
+
+
 
 
         } catch (Exception $e) {

@@ -34,7 +34,8 @@
                     <div class="card blue darken-2">
 
                             <div class="card-image">
-                                <img class="responsive-img" style="max-height:300px !important;" :src="'../images/gsd.jpg'" alt="">
+                                <img class="responsive-img" v-if="club.avatar_url" :src="club.avatar_url" alt="Club image">
+                                <img class="responsive-img" v-else :src="'../images/defaultClub.png'" alt="Default club avatar">
                             </div>
                         <div class="card-content white-text">
                             <span class="card-title">{{club.name}}</span>

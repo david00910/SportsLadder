@@ -4,7 +4,7 @@
 
         <div class="row">
 
-            <form class="col s12 white-text" @submit.prevent="store">
+            <form class="col s12 white-text" @submit.prevent="store" enctype="multipart/form-data">
 
 
 
@@ -40,12 +40,20 @@
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s6">
                         <input id="foundation_date" type="number" min="1830" :max="currentY" name="foundation_date" class="validate" v-model="foundation_date" required>
 
                         <label for="foundation_date">Year of Establishment <small>(Between 1830-{{currentY}})</small></label>
 
                     </div>
+
+                    <div class="file-field input-field col s6">
+                        <i class="material-icons md-36">photo</i>
+                        <span>Logo/Avatar</span>
+                        <input type="file" name="image" accept="image/*"  v-on:change="onFileChange" id="image">
+                    </div>
+
+
                 </div>
 
                 <h5 class="center cyan-text">Address</h5>
@@ -105,6 +113,7 @@
                 city:'',
                 country:'',
                 currentY: new Date().getFullYear(),
+                image: '',
                 output: '',
                 loading: false,
                 err: ''
@@ -120,6 +129,20 @@
 
 
         methods: {
+            onFileChange(e){
+                let files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                this.createImage(files[0]);
+            },
+            createImage(file) {
+                let reader = new FileReader();
+                let vm = this;
+                reader.onload = (e) => {
+                    vm.image = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            },
             store() {
 
                 this.loading = true;
@@ -131,7 +154,8 @@
                     street: this.street,
                     zip: this.zip,
                     city: this.city,
-                    country: this.country
+                    country: this.country,
+                    image: this.image
 
                 })
 
