@@ -18,16 +18,24 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <div class="col"><img :src="'../'+club.avatar_url" class="responsive-img"
-                                      style="border: 2px solid whitesmoke !important; max-height: 300px !important;"
-                                      alt=""></div>
                 <div class="col">
+                    <img id="avatar" v-if="club.avatar_url" :src="'../'+club.avatar_url" class="responsive-img" alt="">
+                    <img class="responsive-img" id="defaultAvatar" v-else :src="'../images/defaultClub.png'"
+                         alt="Default club avatar">
+                </div>
+                <div class="col">
+
+                    <router-link :to="{ name: 'clubs.manager', params: {id: club.id} }" v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"
+                       class="btn transparent cyan-text"><i class="material-icons left cyan-text">settings</i>manage
+                        club</router-link>
+
                     <h3>{{club.name}}</h3>
                     <h5><i class="material-icons">gavel</i> Since {{club.foundation_date}}</h5>
                     <h5><i class="material-icons">stars</i> {{club.owner_user.first_name}} {{club.owner_user.last_name}}
                     </h5>
                     <h6><i class="material-icons">room</i> {{club.club_address.zipcode.city}},
                         {{club.club_address.country}}</h6>
+
                 </div>
 
             </div>
@@ -88,10 +96,12 @@
 
                     <div v-else style="padding: 15px;">
                         <h6 style="margin-bottom: 15px;">There are no club members yet.</h6>
-                        <div v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"
-                             class="addMember"><h6 class="center"><i class="material-icons md-48">
+                        <div
+                            v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"
+                            class="addMember"><h6 class="center"><i class="material-icons md-48">
                             add
                         </i></h6></div>
+
                     </div>
                 </div>
             </div>
@@ -123,19 +133,21 @@
                         this.club = response.data;
                         this.loading = false;
                     }).catch(error => {
-                    console.log('fasz');
+                    console.log(error);
                 });
             },
+
 
         },
 
         mounted() {
             this.getClub();
+            M.autoInit();
         },
 
         created() {
 
-            M.AutoInit();
+
         },
 
 
@@ -145,6 +157,22 @@
 </script>
 
 <style scoped>
+
+    #avatar {
+        -webkit-box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        -moz-box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        max-height: 300px !important;
+    }
+
+    #defaultAvatar {
+        -webkit-box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        -moz-box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);
+        max-height: 300px !important;
+    }
+
+
     .material-icons.md-24 {
         color: #0091ea;
         cursor: pointer;

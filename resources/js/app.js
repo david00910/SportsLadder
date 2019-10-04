@@ -28,6 +28,7 @@ Vue.mixin(Roles);
 
 Vue.component('pagination', Pagination);
 
+
 // Set Vue globally
 window.Vue = Vue;
 

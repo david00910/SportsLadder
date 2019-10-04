@@ -31,7 +31,7 @@
                 <div class="col s12 m6" v-for="club in clubs" v-bind:key="club.id">
 
                     <router-link class="hover" :to="{ name: 'clubs.show', params: {id: club.id}}">
-                    <div class="card blue darken-2">
+                    <div id="cardId" class="card blue accent-4  darken-2">
 
                             <div class="card-image">
                                 <img class="responsive-img" v-if="club.avatar_url" :src="club.avatar_url" alt="Club image">
@@ -108,6 +108,12 @@
 </script>
 
 <style scoped>
+
+    #cardId:hover {
+        -webkit-transform: scale(1.01);
+        transform: scale(1.01);
+
+    }
 
     .preloader-background {
         display: flex;

@@ -16,6 +16,7 @@ import ResultsCreate from './views/results/ResultsCreate';
 import ClubsIndex from "./views/clubs/ClubsIndex";
 import ClubsCreate from "./views/clubs/ClubsCreate";
 import ClubsShow from "./views/clubs/ClubsShow";
+import ClubsManager from "./views/clubs/ClubsManager";
 import NoPermission from './views/layout/NoPermission';
 
 
@@ -148,6 +149,14 @@ const router = new VueRouter({
             path: '/clubs/:id',
             name: 'clubs.show',
             component: ClubsShow,
+            meta: {
+                auth: true
+            }
+        },
+        {
+            path: '/clubs/manager/:id',
+            name: 'clubs.manager',
+            component: ClubsManager,
             meta: {
                 auth: true
             }

@@ -23,7 +23,7 @@
                                         background-position: 50%;
                                         border-radius: 50%;
                                         width: 150px;
-                                        height: 150px;" :src="'../images/gsd.jpg'"></router-link>
+                                        height: 150px;" :src="'/images/gsd.jpg'"></router-link>
 
                 <router-link :to="{ name: 'profile' }" v-if="$auth.check()"><h5 class="white-text center-align">Hi
                     {{$auth.user().user.first_name}}</h5>
@@ -42,7 +42,7 @@
                     <div class="divider cyan accent-3"></div>
 
                     <router-link v-if="$auth.check()" id="resultButton"
-                                 class="resultbtn cyan accent-3 black-text btn-large" style="border-radius: 25px;"
+                                 class="resultbtn cyan accent-3 black-text btn-large" style="border-radius: 10px;"
                                  :to="{ name: 'results.create' }"><i
                         class="material-icons black-text" style="font-size:40px;">play_circle_filled_white</i>New
                         Result
@@ -76,7 +76,7 @@
                 <li>
                     <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'dashboard' }"><i
                         class="material-icons white-text"
-                        style="font-size:36px;">event</i>Events
+                        style="font-size:36px;">event</i> Global events
                     </router-link>
                 </li>
                 <li>
@@ -225,13 +225,14 @@
         background-color: rgba(0, 110, 255, 0.13);
     }
 
-    .sidenav li .white-text:hover {
+    .sidenav li:hover {
         background-color: rgba(0, 110, 255, 0.13);
     }
 
     .resultbtn:hover {
-        background-color: rgba(0, 110, 255, 0.13) !important;
         color: white !important;
+        -webkit-transform: scale(1.01);
+        transform: scale(1.01);
     }
 
 </style>

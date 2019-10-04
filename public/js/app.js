@@ -3856,6 +3856,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: false,
+      club: ''
+    };
+  },
+  methods: {
+    getClub: function getClub() {
+      var _this = this;
+
+      this.loading = true;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('auth/club/' + this.$route.params.id).then(function (response) {
+        _this.club = response.data;
+        _this.loading = false;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getClub();
+    M.AutoInit();
+  },
+  created: function created() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsShow.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/clubs/ClubsShow.vue?vue&type=script&lang=js& ***!
@@ -3867,6 +3958,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3987,16 +4088,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.club = response.data;
         _this.loading = false;
       })["catch"](function (error) {
-        console.log('fasz');
+        console.log(error);
       });
     }
   },
   mounted: function mounted() {
     this.getClub();
+    M.autoInit();
   },
-  created: function created() {
-    M.AutoInit();
-  }
+  created: function created() {}
 });
 
 /***/ }),
@@ -4711,7 +4811,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#topnav[data-v-d456e682] {\n\n    padding-left: 300px;\n    border-radius: 2px;\n}\n@media only screen and (max-width: 992px) {\n#main[data-v-d456e682] {\n        padding-left: 0;\n}\n}\n.brand-logo[data-v-d456e682] {\n    padding-left: 15px !important;\n    padding-right: 15px !important;\n    font-family: 'Montserrat', sans-serif !important;\n}\n#nav-mobile[data-v-d456e682] {\n    padding-left: 15px !important;\n}\n#nav-mobile li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.sidenav li .white-text[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.resultbtn[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13) !important;\n    color: white !important;\n}\n\n", ""]);
+exports.push([module.i, "\n#topnav[data-v-d456e682] {\n\n    padding-left: 300px;\n    border-radius: 2px;\n}\n@media only screen and (max-width: 992px) {\n#main[data-v-d456e682] {\n        padding-left: 0;\n}\n}\n.brand-logo[data-v-d456e682] {\n    padding-left: 15px !important;\n    padding-right: 15px !important;\n    font-family: 'Montserrat', sans-serif !important;\n}\n#nav-mobile[data-v-d456e682] {\n    padding-left: 15px !important;\n}\n#nav-mobile li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.sidenav li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.resultbtn[data-v-d456e682]:hover {\n    color: white !important;\n    transform: scale(1.01);\n}\n\n", ""]);
 
 // exports
 
@@ -4787,7 +4887,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.preloader-background[data-v-04dfe4c6] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(20, 20, 20, 0.692);\n\n    position: absolute;\n    z-index: 2;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n\n", ""]);
+exports.push([module.i, "\n#cardId[data-v-04dfe4c6]:hover {\n    transform: scale(1.01);\n}\n.preloader-background[data-v-04dfe4c6] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(20, 20, 20, 0.692);\n\n    position: absolute;\n    z-index: 2;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n}\n\n\n", ""]);
 
 // exports
 
@@ -4806,7 +4906,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.material-icons.md-24[data-v-eb4b6d8e] {\n    color: #0091ea;\n    cursor: pointer;\n    font-size: 40px;\n}\n.material-icons.md-24[data-v-eb4b6d8e]:hover {\n    color: cyan !important;\n}\n.material-icons.md-48[data-v-eb4b6d8e] {\n    font-size: 60px;\n    padding: 8px;\n    color: #0091ea;\n}\n.material-icons.md-48[data-v-eb4b6d8e]:hover {\n    color: cyan !important;\n}\n.addMember[data-v-eb4b6d8e] {\n    border: 2px solid #0091ea;\n    width: 100px;\n    height: 100px;\n    cursor: pointer;\n    margin: 0 auto !important;\n}\n.addMember[data-v-eb4b6d8e]:hover {\n    border: 2px solid cyan;\n}\n", ""]);
+exports.push([module.i, "\n#avatar[data-v-eb4b6d8e] {\n    box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);\n    max-height: 300px !important;\n}\n#defaultAvatar[data-v-eb4b6d8e] {\n    box-shadow: 6px 5px 8px -6px rgba(187, 204, 230, 0.47);\n    max-height: 300px !important;\n}\n.material-icons.md-24[data-v-eb4b6d8e] {\n    color: #0091ea;\n    cursor: pointer;\n    font-size: 40px;\n}\n.material-icons.md-24[data-v-eb4b6d8e]:hover {\n    color: cyan !important;\n}\n.material-icons.md-48[data-v-eb4b6d8e] {\n    font-size: 60px;\n    padding: 8px;\n    color: #0091ea;\n}\n.material-icons.md-48[data-v-eb4b6d8e]:hover {\n    color: cyan !important;\n}\n.addMember[data-v-eb4b6d8e] {\n    border: 2px solid #0091ea;\n    width: 100px;\n    height: 100px;\n    cursor: pointer;\n    margin: 0 auto !important;\n}\n.addMember[data-v-eb4b6d8e]:hover {\n    border: 2px solid cyan;\n}\n", ""]);
 
 // exports
 
@@ -37209,7 +37309,7 @@ var render = function() {
                     width: "150px",
                     height: "150px"
                   },
-                  attrs: { src: "../images/gsd.jpg" }
+                  attrs: { src: "/images/gsd.jpg" }
                 })
               ]),
               _vm._v(" "),
@@ -37256,7 +37356,7 @@ var render = function() {
                       {
                         staticClass:
                           "resultbtn cyan accent-3 black-text btn-large",
-                        staticStyle: { "border-radius": "25px" },
+                        staticStyle: { "border-radius": "10px" },
                         attrs: {
                           id: "resultButton",
                           to: { name: "results.create" }
@@ -37406,7 +37506,7 @@ var render = function() {
                           },
                           [_vm._v("event")]
                         ),
-                        _vm._v("Events\n                ")
+                        _vm._v(" Global events\n                ")
                       ]
                     )
                   : _vm._e()
@@ -38769,74 +38869,84 @@ var render = function() {
                     }
                   },
                   [
-                    _c("div", { staticClass: "card blue darken-2" }, [
-                      _c("div", { staticClass: "card-image" }, [
-                        club.avatar_url
-                          ? _c("img", {
-                              staticClass: "responsive-img",
-                              attrs: { src: club.avatar_url, alt: "Club image" }
-                            })
-                          : _c("img", {
-                              staticClass: "responsive-img",
-                              attrs: {
-                                src: "../images/defaultClub.png",
-                                alt: "Default club avatar"
-                              }
-                            })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-content white-text" }, [
-                        _c("span", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(club.name))
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card blue accent-4  darken-2",
+                        attrs: { id: "cardId" }
+                      },
+                      [
+                        _c("div", { staticClass: "card-image" }, [
+                          club.avatar_url
+                            ? _c("img", {
+                                staticClass: "responsive-img",
+                                attrs: {
+                                  src: club.avatar_url,
+                                  alt: "Club image"
+                                }
+                              })
+                            : _c("img", {
+                                staticClass: "responsive-img",
+                                attrs: {
+                                  src: "../images/defaultClub.png",
+                                  alt: "Default club avatar"
+                                }
+                              })
                         ]),
                         _vm._v(" "),
-                        _c("p", [
-                          _c("i", { staticClass: "material-icons" }, [
-                            _vm._v(
-                              "\n                            history\n                        "
-                            )
+                        _c("div", { staticClass: "card-content white-text" }, [
+                          _c("span", { staticClass: "card-title" }, [
+                            _vm._v(_vm._s(club.name))
                           ]),
-                          _vm._v(
-                            " Established in " +
-                              _vm._s(club.foundation_date) +
-                              " by " +
-                              _vm._s(
-                                club.owner.first_name +
-                                  " " +
-                                  club.owner.last_name
+                          _vm._v(" "),
+                          _c("p", [
+                            _c("i", { staticClass: "material-icons" }, [
+                              _vm._v(
+                                "\n                            history\n                        "
                               )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("h6", [
-                          _c("i", { staticClass: "material-icons" }, [
+                            ]),
                             _vm._v(
-                              "\n                            room\n                        "
+                              " Established in " +
+                                _vm._s(club.foundation_date) +
+                                " by " +
+                                _vm._s(
+                                  club.owner.first_name +
+                                    " " +
+                                    club.owner.last_name
+                                )
                             )
                           ]),
-                          _vm._v(
-                            " " +
-                              _vm._s(club.address_id.zipcode.city) +
-                              ", " +
-                              _vm._s(club.address_id.country)
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _vm.$auth.user().owner
-                        ? _c("div", { staticClass: "card-action" }, [
-                            _vm.$auth.user().role === "administrator"
-                              ? _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Manage")
-                                ])
-                              : _vm.$auth.user().owner.id === club.id
-                              ? _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Manage my club")
-                                ])
-                              : _vm._e()
+                          _vm._v(" "),
+                          _c("h6", [
+                            _c("i", { staticClass: "material-icons" }, [
+                              _vm._v(
+                                "\n                            room\n                        "
+                              )
+                            ]),
+                            _vm._v(
+                              " " +
+                                _vm._s(club.address_id.zipcode.city) +
+                                ", " +
+                                _vm._s(club.address_id.country)
+                            )
                           ])
-                        : _vm._e()
-                    ])
+                        ]),
+                        _vm._v(" "),
+                        _vm.$auth.user().owner
+                          ? _c("div", { staticClass: "card-action" }, [
+                              _vm.$auth.user().role === "administrator"
+                                ? _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v("Manage")
+                                  ])
+                                : _vm.$auth.user().owner.id === club.id
+                                ? _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v("Manage my club")
+                                  ])
+                                : _vm._e()
+                            ])
+                          : _vm._e()
+                      ]
+                    )
                   ]
                 )
               ],
@@ -38891,6 +39001,137 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "clubsmanager" }, [
+    _vm.loading
+      ? _c("div", { staticClass: "preloader-background loading center" }, [
+          _vm._m(0)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "center" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "section" }, [
+          _c("h6", { staticClass: "cyan-text" }, [
+            _vm._v(_vm._s(_vm.club.name))
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "col s12", attrs: { id: "test2" } }, [
+          _vm._v("Test 2")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col s12", attrs: { id: "test3" } }, [
+          _vm._v("Test 3")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col s12", attrs: { id: "test4" } }, [
+          _vm._v("Test 4")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "preloader-wrapper active" }, [
+      _c("div", { staticClass: "spinner-layer spinner-cyan-only" }, [
+        _c("div", { staticClass: "circle-clipper left" }, [
+          _c("div", { staticClass: "circle" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "gap-patch" }, [
+          _c("div", { staticClass: "circle" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "circle-clipper right" }, [
+          _c("div", { staticClass: "circle" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "center" }, [
+      _c("ul", { staticClass: "tabs cyan-text transparent " }, [
+        _c("li", { staticClass: "tab col" }, [
+          _c("a", { staticClass: "active", attrs: { href: "#test1" } }, [
+            _c("i", { staticClass: "material-icons left" }, [_vm._v("edit")]),
+            _vm._v("information")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "tab col" }, [
+          _c("a", { attrs: { href: "#test2" } }, [
+            _c("i", { staticClass: "material-icons left" }, [_vm._v("photo")]),
+            _vm._v("avatar")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "tab col" }, [
+          _c("a", { attrs: { href: "#test3" } }, [
+            _c("i", { staticClass: "material-icons left" }, [
+              _vm._v("supervisor_account")
+            ]),
+            _vm._v("members")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "tab col" }, [
+          _c("a", { attrs: { href: "#test4" } }, [
+            _c("i", { staticClass: "material-icons left" }, [
+              _vm._v("supervisor_account")
+            ]),
+            _vm._v("club\n                        events")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12", attrs: { id: "test1" } }, [
+      _c("h6", [_vm._v("Change the avatar/logo of this club")]),
+      _vm._v(" "),
+      _c("small", { staticClass: "red-text" }, [
+        _vm._v("Remember! "),
+        _c("br"),
+        _vm._v(" The old one will be deleted permanently.")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsShow.vue?vue&type=template&id=eb4b6d8e&scoped=true&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/clubs/ClubsShow.vue?vue&type=template&id=eb4b6d8e&scoped=true& ***!
@@ -38916,45 +39157,78 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "col" }, [
-          _c("img", {
-            staticClass: "responsive-img",
-            staticStyle: {
-              border: "2px solid whitesmoke !important",
-              "max-height": "300px !important"
-            },
-            attrs: { src: "../" + _vm.club.avatar_url, alt: "" }
-          })
+          _vm.club.avatar_url
+            ? _c("img", {
+                staticClass: "responsive-img",
+                attrs: {
+                  id: "avatar",
+                  src: "../" + _vm.club.avatar_url,
+                  alt: ""
+                }
+              })
+            : _c("img", {
+                staticClass: "responsive-img",
+                attrs: {
+                  id: "defaultAvatar",
+                  src: "../images/defaultClub.png",
+                  alt: "Default club avatar"
+                }
+              })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c("h3", [_vm._v(_vm._s(_vm.club.name))]),
-          _vm._v(" "),
-          _c("h5", [
-            _c("i", { staticClass: "material-icons" }, [_vm._v("gavel")]),
-            _vm._v(" Since " + _vm._s(_vm.club.foundation_date))
-          ]),
-          _vm._v(" "),
-          _c("h5", [
-            _c("i", { staticClass: "material-icons" }, [_vm._v("stars")]),
-            _vm._v(
-              " " +
-                _vm._s(_vm.club.owner_user.first_name) +
+        _c(
+          "div",
+          { staticClass: "col" },
+          [
+            _vm.$auth.user().role === "administrator" ||
+            _vm.$auth.user().owner.id === _vm.club.id
+              ? _c(
+                  "router-link",
+                  {
+                    staticClass: "btn transparent cyan-text",
+                    attrs: {
+                      to: { name: "clubs.manager", params: { id: _vm.club.id } }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "material-icons left cyan-text" }, [
+                      _vm._v("settings")
+                    ]),
+                    _vm._v("manage\n                    club")
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("h3", [_vm._v(_vm._s(_vm.club.name))]),
+            _vm._v(" "),
+            _c("h5", [
+              _c("i", { staticClass: "material-icons" }, [_vm._v("gavel")]),
+              _vm._v(" Since " + _vm._s(_vm.club.foundation_date))
+            ]),
+            _vm._v(" "),
+            _c("h5", [
+              _c("i", { staticClass: "material-icons" }, [_vm._v("stars")]),
+              _vm._v(
                 " " +
-                _vm._s(_vm.club.owner_user.last_name) +
-                "\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("h6", [
-            _c("i", { staticClass: "material-icons" }, [_vm._v("room")]),
-            _vm._v(
-              " " +
-                _vm._s(_vm.club.club_address.zipcode.city) +
-                ",\n                    " +
-                _vm._s(_vm.club.club_address.country)
-            )
-          ])
-        ])
+                  _vm._s(_vm.club.owner_user.first_name) +
+                  " " +
+                  _vm._s(_vm.club.owner_user.last_name) +
+                  "\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("h6", [
+              _c("i", { staticClass: "material-icons" }, [_vm._v("room")]),
+              _vm._v(
+                " " +
+                  _vm._s(_vm.club.club_address.zipcode.city) +
+                  ",\n                    " +
+                  _vm._s(_vm.club.club_address.country)
+              )
+            ])
+          ],
+          1
+        )
       ])
     ]),
     _vm._v(" "),
@@ -55602,7 +55876,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_clubs_ClubsIndex__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/clubs/ClubsIndex */ "./resources/js/views/clubs/ClubsIndex.vue");
 /* harmony import */ var _views_clubs_ClubsCreate__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/clubs/ClubsCreate */ "./resources/js/views/clubs/ClubsCreate.vue");
 /* harmony import */ var _views_clubs_ClubsShow__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/clubs/ClubsShow */ "./resources/js/views/clubs/ClubsShow.vue");
-/* harmony import */ var _views_layout_NoPermission__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/layout/NoPermission */ "./resources/js/views/layout/NoPermission.vue");
+/* harmony import */ var _views_clubs_ClubsManager__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/clubs/ClubsManager */ "./resources/js/views/clubs/ClubsManager.vue");
+/* harmony import */ var _views_layout_NoPermission__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/layout/NoPermission */ "./resources/js/views/layout/NoPermission.vue");
+
 
 
 
@@ -55724,11 +56000,18 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     meta: {
       auth: true
     }
+  }, {
+    path: '/clubs/manager/:id',
+    name: 'clubs.manager',
+    component: _views_clubs_ClubsManager__WEBPACK_IMPORTED_MODULE_16__["default"],
+    meta: {
+      auth: true
+    }
   }, //MISC
   {
     path: '/403',
     name: '403',
-    component: _views_layout_NoPermission__WEBPACK_IMPORTED_MODULE_16__["default"]
+    component: _views_layout_NoPermission__WEBPACK_IMPORTED_MODULE_17__["default"]
   }, {
     path: '/404',
     name: '404',
@@ -56260,6 +56543,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsIndex_vue_vue_type_template_id_04dfe4c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsIndex_vue_vue_type_template_id_04dfe4c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/clubs/ClubsManager.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/views/clubs/ClubsManager.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true& */ "./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true&");
+/* harmony import */ var _ClubsManager_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClubsManager.vue?vue&type=script&lang=js& */ "./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ClubsManager_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3db1bf21",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/clubs/ClubsManager.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsManager_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ClubsManager.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsManager.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsManager_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/clubs/ClubsManager.vue?vue&type=template&id=3db1bf21&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClubsManager_vue_vue_type_template_id_3db1bf21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
