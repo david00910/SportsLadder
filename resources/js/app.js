@@ -18,8 +18,15 @@ import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
 
+Vue.use(VueMaterial);
 
+import {Tabs, Tab} from 'vue-tabs-component';
+
+Vue.component('tabs', Tabs);
+Vue.component('tab', Tab);
 
 Vue.component('v-select', vSelect);
 

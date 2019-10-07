@@ -22,6 +22,7 @@
          <table v-if="users" class="responsive-table highlight">
         <thead>
           <tr class="cyan-text text-accent-3">
+              <th>Avatar</th>
               <th>ID</th>
               <th>Name</th>
               <th>Email</th>
@@ -32,6 +33,9 @@
 
         <tbody>
           <tr v-for="user in users" v-bind:key="user.id">
+              <td><img id="avatar" v-if="user.avatar_url" :src="'./'+user.avatar_url" class="circle responsive-img" alt="">
+                  <img class="circle responsive-img" id="defaultAvatar" v-else :src="'./images/defaultClub.png'"
+                       alt="Default club avatar"></td>
             <td>{{ user.id }}</td>
             <td>{{ user.first_name }} {{ user.last_name }}</td>
             <td>{{ user.email }}</td>
@@ -130,5 +134,15 @@ table.highlight>tbody>tr {
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+#avatar {
+
+    max-height: 70px !important;
+}
+
+#defaultAvatar {
+
+    max-height: 70px !important;
 }
 </style>

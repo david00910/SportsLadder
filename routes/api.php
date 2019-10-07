@@ -55,6 +55,8 @@ Route::prefix('v1')->group(function () {
             Route::get('clubs', 'ClubController@index');
             Route::get('club/{id}', 'ClubController@show');
             Route::post('clubs/store', 'ClubController@store');
+            Route::post('clubs/edit/image/{id}', 'ClubController@changeImage');
+            Route::post('clubs/edit/general/{id}', 'ClubController@editInfo');
 
             // LOGOUT
             Route::post('logout', 'AuthController@logout');

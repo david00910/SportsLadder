@@ -4,7 +4,7 @@
 
         <nav id="topnav" class="black">
             <div class="nav-wrapper ">
-                <a href="#" class="brand-logo right">MyLadder</a>
+                <a href="#" class="brand-logo right">MyLadder Manager</a><span class="badge cyan white-text">BETA</span>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="sass.html"><i class="small material-icons cyan-text text-accent-3">vibration</i></a>
                     </li>
@@ -93,6 +93,12 @@
                     <router-link class="white-text" :to="{ name: 'dashboard' }"><i class="material-icons white-text"
                                                                                    style="font-size:36px;">settings</i>ADMIN
                         DASHBOARD
+                    </router-link>
+                </li>
+
+                <li v-if="$auth.check() && $auth.user().role === 'administrator' || $auth.check() && $auth.user().role === 'club_owner'">
+                    <router-link class="white-text" :to="{ name: 'clubs.manager', params: {id: $auth.user().owner.id} }"><i class="material-icons white-text"
+                                                                                   style="font-size:36px;">star</i>CLUB MANAGER
                     </router-link>
                 </li>
 
