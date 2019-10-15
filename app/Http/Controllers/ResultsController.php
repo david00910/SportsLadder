@@ -102,6 +102,7 @@ class ResultsController extends Controller
 
             $tempL = $winner->ranking;
 
+            // Probably later it will need a more optimized solution if possible
             if ($winner->ranking > $loser->ranking) {
                 $winner->ranking = $loser->ranking;
                 $loser->ranking++;

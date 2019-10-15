@@ -258,4 +258,57 @@ class ClubController extends Controller
         return response()->json(['status' => 'success', 'msg' => 'You have successfully edited the general information of your club!'], 200);
     }
 
+    protected function addMemberData() {
+
+        $users = User::orderBy('ranking', 'ASC')->paginate(10);
+
+        $response = [
+            'pagination' => [
+                'total' => $users->total(),
+                'per_page' => $users->perPage(),
+                'current_page' => $users->currentPage(),
+                'last_page' => $users->lastPage(),
+                'from' => $users->firstItem(),
+                'to' => $users->lastItem()
+            ],
+            'data' => $users
+        ];
+
+        return response()->json($response);
+
+
+    }
+
+    protected function deleteMember(Request $request, $id) {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+        $cu = $currentUser->id;
+
+        $request->validate([
+            'club' => 'required',
+        ]);
+
+        $club = Club::find($request->club);
+
+
+        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+            try {
+
+                $club->clubMembers()->detach($id);
+
+            } catch (Exception $e) {
+                return response()->json([
+                    'status' => 'error',
+                    'error' => $e->errors()
+                ], 400);
+
+            }
+            return response()->json(['status' => 'success', 'msg' => 'You have successfully removed this player from your club!'], 200);
+        }
+            else {
+                return response()->json(['err' => 'Access denied: only club owners or administrators can remove members.']);
+            }
+
+
+    }
+
 }

@@ -17,6 +17,9 @@
             </div>
         </div>
 
+        <h6 class="cyan-text" v-if="output">{{output.msg}}</h6>
+        <h6 class="red-text" v-if="err">Error: {{err}}</h6>
+
         <div class="col">
             <h5>CLUB MANAGER<span class="badge cyan white-text">BETA</span></h5>
         </div>
@@ -140,6 +143,53 @@
                         <h6 class="center">Manage club members</h6>
                         <p class="center">On this tab you can view, add and remove players to/from your club.</p>
                         </div>
+                        <a class="waves-effect waves-cyan btn" v-on:click="addNew"><i class="material-icons left">add</i>MEMBER</a>
+                        <transition name="fade">
+                            <div v-if="addMember">
+                                <table v-if="users" class="responsive-table highlight">
+                                    <thead>
+                                    <tr class="cyan-text text-accent-3">
+                                        <th>Avatar</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Ranking</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr v-for="user in users" v-bind:key="user.id">
+                                        <td><img id="avatar1" v-if="user.avatar_url" :src="'./'+user.avatar_url"
+                                                 class="circle responsive-img" alt="">
+                                            <img class="circle responsive-img" id="defaultAvatar1" v-else :src="'./images/defaultClub.png'"
+                                                 alt="Default club avatar"></td>
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.first_name }} {{ user.last_name }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.ranking }}</td>
+                                        <td>
+                                            <!-- Only if logged in user is admin-->
+                                            <router-link v-if="$auth.user().role === 'administrator'"
+                                                         :to="{ name: 'users.edit', params: {id: user.id} }"><i
+                                                class="small material-icons">settings </i></router-link>
+
+                                            <router-link :to="{ name: 'users.show', params: {id: user.id} }"><i
+                                                class="small material-icons">info</i></router-link>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <pagination v-if="pagination.last_page > 1" :pagination="pagination" :offset="5"
+                                            @paginate="getUsers()"></pagination>
+
+                                <a class="waves-effect waves-cyan btn" @click="addNewClose">Close</a>
+                            </div>
+                        </transition>
+
+                        <div class="divider cyan accent-3"></div>
+
                         <table v-if="club.club_members.length" class="responsive-table highlight">
                             <thead>
                             <tr class="cyan-text text-accent-3">
@@ -163,9 +213,12 @@
                                 <td>{{  c.ranking }}</td>
                                 <td>
                                     <!-- Only if logged in user is admin-->
-                                    <router-link v-if="$auth.user().role === 'administrator'" :to="{ name: 'users.edit', params: {id: c.id} }"><i class="small material-icons">settings  </i></router-link>
-
-                                    <router-link :to="{ name: 'users.show', params: {id: c.id} }"><i class="small material-icons">info</i></router-link>
+                                    <div style="cursor:pointer;" v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id" v-on:click="deleteConfirm = true" ><i class="small red-text material-icons">delete_forever</i></div>
+                                    <div v-show="deleteConfirm">
+                                    <button class="btn-small red" @click="deleteMember(c.id)">Confirm</button>
+                                    <button class="btn-small grey" @click="deleteConfirm = false">Cancel</button>
+                                    </div>
+                                        <router-link :to="{ name: 'users.show', params: {id: c.id} }"><i class="small material-icons">info</i></router-link>
                                 </td>
                             </tr>
                             </tbody>
@@ -193,6 +246,9 @@
 
         data() {
             return {
+
+                addMember: false,
+                deleteConfirm: false,
                 loading: false,
                 club:[ null,
                     {
@@ -213,11 +269,60 @@
                 currentY: new Date().getFullYear(),
                 image: '',
                 output: '',
-                err: ''
+                err: '',
+                users: {},
+                pagination: {
+                    'current_page': 1
+                }
             };
         },
 
+
         methods: {
+
+            addNew() {
+
+                this.loading = true;
+                this.addMember = true;
+                let id = this.club.id;
+
+                    axios.get('auth/clubs/members/?page=' + this.pagination.current_page)
+                        .then(response => {
+                            this.users = response.data.data.data;
+                            this.pagination = response.data.pagination;
+                            this.loading = false;
+                        }) .catch(error => {
+                        console.log(error.response.data);
+                    });
+                    this.loading = false;
+
+            },
+
+            addNewClose() {
+              this.addMember = false;
+            },
+
+            deleteMember(id) {
+                //this.loading = true;
+
+                this.$http.post('auth/clubs/member/delete/' + id, {
+                    club: this.club.id
+                })
+
+                    .then(response => {
+                        this.output = response.data;
+                        this.err = response.data.err;
+                        const cMemberIndex = this.club.club_members.findIndex(c => c.id === id);
+                        this.club.club_members.splice(cMemberIndex, 1);
+                        this.deleteConfirm = false;
+                        this.loading = false;
+                    })
+                    .catch(error => {
+                        this.output = error;
+                        this.loading = false;
+                    })
+
+            },
 
             getClub() {
 
@@ -337,4 +442,29 @@
         max-height: 70px !important;
     }
 
+    .displayed {
+        display: none;
+    }
+
+    .addBtn {
+        border: 1px solid cyan;
+        border-radius: 10px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+
+    #avatar1 {
+
+        max-height: 70px !important;
+    }
+
+    #defaultAvatar1 {
+
+        max-height: 70px !important;
+    }
 </style>
