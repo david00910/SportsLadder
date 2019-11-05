@@ -6,9 +6,9 @@
             <div class="nav-wrapper ">
                 <a href="#" class="brand-logo right">MyLadder Manager</a><span class="badge cyan white-text">BETA</span>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="sass.html"><i class="small material-icons cyan-text text-accent-3">vibration</i></a>
+                    <li><div style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-3 shake">vibration</i></div>
                     </li>
-                    <li><a href="badges.html"><i class="small material-icons cyan-text text-accent-3">message</i></a>
+                    <li><div style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-4">vibration</i></div>
                     </li>
                 </ul>
             </div>
@@ -239,6 +239,27 @@
         color: white !important;
         -webkit-transform: scale(1.01);
         transform: scale(1.01);
+    }
+
+    @-webkit-keyframes spaceboots {
+        0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+        10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { -webkit-transform: translate(-2px, 0px) rotate(1deg); }
+        30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+        40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+        50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { -webkit-transform: translate(-2px, 1px) rotate(0deg); }
+        70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+        80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+        90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+        100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+    }
+    .shake {
+        -webkit-animation-name: spaceboots;
+        -webkit-animation-duration: 0.8s;
+        -webkit-transform-origin:50% 50%;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease;
     }
 
 </style>

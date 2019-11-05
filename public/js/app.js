@@ -4112,8 +4112,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -4187,13 +4185,28 @@ __webpack_require__.r(__webpack_exports__);
         _this2.loading = false;
       });
     },
-    getClub: function getClub() {
+    inviteMember: function inviteMember(id) {
       var _this3 = this;
+
+      //this.loading = true;
+      this.$http.post('auth/clubs/member/invite/' + id, {
+        club: this.club.id
+      }).then(function (response) {
+        _this3.output = response.data;
+        _this3.err = response.data.err;
+        _this3.loading = false;
+      })["catch"](function (error) {
+        _this3.output = error;
+        _this3.loading = false;
+      });
+    },
+    getClub: function getClub() {
+      var _this4 = this;
 
       this.loading = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('auth/club/' + this.$route.params.id).then(function (response) {
-        _this3.club = response.data;
-        _this3.loading = false;
+        _this4.club = response.data;
+        _this4.loading = false;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -4214,22 +4227,22 @@ __webpack_require__.r(__webpack_exports__);
       reader.readAsDataURL(file);
     },
     storeImage: function storeImage() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.loading = true;
       this.$http.post('auth/clubs/edit/image/' + this.$route.params.id, {
         image: this.image
       }).then(function (response) {
-        _this4.output = response.data;
-        _this4.err = response.data.err;
-        _this4.loading = false;
+        _this5.output = response.data;
+        _this5.err = response.data.err;
+        _this5.loading = false;
       })["catch"](function (error) {
-        _this4.output = error;
-        _this4.loading = false;
+        _this5.output = error;
+        _this5.loading = false;
       });
     },
     storeInformation: function storeInformation() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.loading = true;
       this.$http.post('auth/clubs/edit/general/' + this.$route.params.id, {
@@ -4241,12 +4254,12 @@ __webpack_require__.r(__webpack_exports__);
         city: this.club.club_address.zipcode.city,
         country: this.club.club_address.country
       }).then(function (response) {
-        _this5.output = response.data;
-        _this5.err = response.data.err;
-        _this5.loading = false;
+        _this6.output = response.data;
+        _this6.err = response.data.err;
+        _this6.loading = false;
       })["catch"](function (error) {
-        _this5.output = error;
-        _this5.loading = false;
+        _this6.output = error;
+        _this6.loading = false;
       });
     }
   },
@@ -5135,7 +5148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#topnav[data-v-d456e682] {\n\n    padding-left: 300px;\n    border-radius: 2px;\n}\n@media only screen and (max-width: 992px) {\n#main[data-v-d456e682] {\n        padding-left: 0;\n}\n}\n.brand-logo[data-v-d456e682] {\n    padding-left: 15px !important;\n    padding-right: 15px !important;\n    font-family: 'Montserrat', sans-serif !important;\n}\n#nav-mobile[data-v-d456e682] {\n    padding-left: 15px !important;\n}\n#nav-mobile li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.sidenav li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.resultbtn[data-v-d456e682]:hover {\n    color: white !important;\n    transform: scale(1.01);\n}\n\n", ""]);
+exports.push([module.i, "\n#topnav[data-v-d456e682] {\n\n    padding-left: 300px;\n    border-radius: 2px;\n}\n@media only screen and (max-width: 992px) {\n#main[data-v-d456e682] {\n        padding-left: 0;\n}\n}\n.brand-logo[data-v-d456e682] {\n    padding-left: 15px !important;\n    padding-right: 15px !important;\n    font-family: 'Montserrat', sans-serif !important;\n}\n#nav-mobile[data-v-d456e682] {\n    padding-left: 15px !important;\n}\n#nav-mobile li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.sidenav li[data-v-d456e682]:hover {\n    background-color: rgba(0, 110, 255, 0.13);\n}\n.resultbtn[data-v-d456e682]:hover {\n    color: white !important;\n    transform: scale(1.01);\n}\n@-webkit-keyframes spaceboots-data-v-d456e682 {\n0% { -webkit-transform: translate(2px, 1px) rotate(0deg);\n}\n10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% { -webkit-transform: translate(-2px, 0px) rotate(1deg);\n}\n30% { -webkit-transform: translate(0px, 2px) rotate(0deg);\n}\n40% { -webkit-transform: translate(1px, -1px) rotate(1deg);\n}\n50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% { -webkit-transform: translate(-2px, 1px) rotate(0deg);\n}\n70% { -webkit-transform: translate(2px, 1px) rotate(-1deg);\n}\n80% { -webkit-transform: translate(-1px, -1px) rotate(1deg);\n}\n90% { -webkit-transform: translate(2px, 2px) rotate(0deg);\n}\n100% { -webkit-transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n.shake[data-v-d456e682] {\n    -webkit-animation-name: spaceboots-data-v-d456e682;\n    -webkit-animation-duration: 0.8s;\n    -webkit-transform-origin:50% 50%;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: ease;\n}\n\n", ""]);
 
 // exports
 
@@ -38088,27 +38101,47 @@ var staticRenderFns = [
           },
           [
             _c("li", [
-              _c("a", { attrs: { href: "sass.html" } }, [
-                _c(
-                  "i",
-                  {
-                    staticClass: "small material-icons cyan-text text-accent-3"
-                  },
-                  [_vm._v("vibration")]
-                )
-              ])
+              _c(
+                "div",
+                {
+                  staticStyle: {
+                    cursor: "pointer !important",
+                    padding: "0 7px 0 7px !important"
+                  }
+                },
+                [
+                  _c(
+                    "i",
+                    {
+                      staticClass:
+                        "small material-icons cyan-text text-accent-3 shake"
+                    },
+                    [_vm._v("vibration")]
+                  )
+                ]
+              )
             ]),
             _vm._v(" "),
             _c("li", [
-              _c("a", { attrs: { href: "badges.html" } }, [
-                _c(
-                  "i",
-                  {
-                    staticClass: "small material-icons cyan-text text-accent-3"
-                  },
-                  [_vm._v("message")]
-                )
-              ])
+              _c(
+                "div",
+                {
+                  staticStyle: {
+                    cursor: "pointer !important",
+                    padding: "0 7px 0 7px !important"
+                  }
+                },
+                [
+                  _c(
+                    "i",
+                    {
+                      staticClass:
+                        "small material-icons cyan-text text-accent-4"
+                    },
+                    [_vm._v("vibration")]
+                  )
+                ]
+              )
             ])
           ]
         )
@@ -39940,6 +39973,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "waves-effect waves-cyan btn",
+                      staticStyle: { "border-radius": "0 !important" },
                       on: { click: _vm.addNew }
                     },
                     [
@@ -39993,7 +40027,7 @@ var render = function() {
                                                     "circle responsive-img",
                                                   attrs: {
                                                     id: "avatar1",
-                                                    src: "./" + user.avatar_url,
+                                                    src: "/" + user.avatar_url,
                                                     alt: ""
                                                   }
                                                 })
@@ -40003,7 +40037,7 @@ var render = function() {
                                                   attrs: {
                                                     id: "defaultAvatar1",
                                                     src:
-                                                      "./images/defaultClub.png",
+                                                      "/images/defaultClub.png",
                                                     alt: "Default club avatar"
                                                   }
                                                 })
@@ -40030,36 +40064,11 @@ var render = function() {
                                           _c(
                                             "td",
                                             [
-                                              _vm.$auth.user().role ===
-                                              "administrator"
-                                                ? _c(
-                                                    "router-link",
-                                                    {
-                                                      attrs: {
-                                                        to: {
-                                                          name: "users.edit",
-                                                          params: {
-                                                            id: user.id
-                                                          }
-                                                        }
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "i",
-                                                        {
-                                                          staticClass:
-                                                            "small material-icons"
-                                                        },
-                                                        [_vm._v("settings ")]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
                                               _c(
                                                 "router-link",
                                                 {
+                                                  staticClass:
+                                                    "btn btn blue-grey",
                                                   attrs: {
                                                     to: {
                                                       name: "users.show",
@@ -40067,17 +40076,33 @@ var render = function() {
                                                     }
                                                   }
                                                 },
-                                                [
-                                                  _c(
-                                                    "i",
+                                                [_vm._v("Info")]
+                                              ),
+                                              _vm._v(" "),
+                                              _vm.$auth.user().role ===
+                                                "administrator" ||
+                                              _vm.$auth.user().owner.id ===
+                                                _vm.club.id
+                                                ? _c(
+                                                    "div",
                                                     {
-                                                      staticClass:
-                                                        "small material-icons"
+                                                      staticClass: "btn",
+                                                      staticStyle: {
+                                                        cursor: "pointer"
+                                                      },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.inviteMember(
+                                                            user.id
+                                                          )
+                                                        }
+                                                      }
                                                     },
-                                                    [_vm._v("info")]
+                                                    [_vm._v("Invite")]
                                                   )
-                                                ]
-                                              )
+                                                : _vm._e()
                                             ],
                                             1
                                           )
@@ -57831,7 +57856,7 @@ var config = {
     url: 'auth/refresh',
     method: 'GET',
     enabled: true,
-    interval: 30
+    interval: 60
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (config);

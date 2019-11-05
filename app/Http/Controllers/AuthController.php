@@ -7,6 +7,9 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use App\User;
 class AuthController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
 
 
     /**
@@ -136,6 +139,7 @@ class AuthController extends Controller
                 ->header('Authorization', $token);
         }
         return response()->json(['error' => 'refresh_token_error'], 401);
+
     }
     /**
      * Return auth guard

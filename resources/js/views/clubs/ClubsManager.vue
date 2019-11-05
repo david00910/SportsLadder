@@ -143,7 +143,7 @@
                         <h6 class="center">Manage club members</h6>
                         <p class="center">On this tab you can view, add and remove players to/from your club.</p>
                         </div>
-                        <a class="waves-effect waves-cyan btn" v-on:click="addNew"><i class="material-icons left">add</i>MEMBER</a>
+                        <a class="waves-effect waves-cyan btn" style="border-radius: 0 !important;" v-on:click="addNew"><i class="material-icons left">add</i>MEMBER</a>
                         <transition name="fade">
                             <div v-if="addMember">
                                 <table v-if="users" class="responsive-table highlight">
@@ -160,9 +160,9 @@
 
                                     <tbody>
                                     <tr v-for="user in users" v-bind:key="user.id">
-                                        <td><img id="avatar1" v-if="user.avatar_url" :src="'./'+user.avatar_url"
+                                        <td><img id="avatar1" v-if="user.avatar_url" :src="'/'+user.avatar_url"
                                                  class="circle responsive-img" alt="">
-                                            <img class="circle responsive-img" id="defaultAvatar1" v-else :src="'./images/defaultClub.png'"
+                                            <img class="circle responsive-img" id="defaultAvatar1" v-else :src="'/images/defaultClub.png'"
                                                  alt="Default club avatar"></td>
                                         <td>{{ user.id }}</td>
                                         <td>{{ user.first_name }} {{ user.last_name }}</td>
@@ -170,12 +170,10 @@
                                         <td>{{ user.ranking }}</td>
                                         <td>
                                             <!-- Only if logged in user is admin-->
-                                            <router-link v-if="$auth.user().role === 'administrator'"
-                                                         :to="{ name: 'users.edit', params: {id: user.id} }"><i
-                                                class="small material-icons">settings </i></router-link>
 
-                                            <router-link :to="{ name: 'users.show', params: {id: user.id} }"><i
-                                                class="small material-icons">info</i></router-link>
+                                            <router-link class="btn btn blue-grey" :to="{ name: 'users.show', params: {id: user.id} }">Info</router-link>
+
+                                            <div style="cursor:pointer;" class="btn" @click="inviteMember(user.id)" v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id">Invite</div>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -315,6 +313,25 @@
                         const cMemberIndex = this.club.club_members.findIndex(c => c.id === id);
                         this.club.club_members.splice(cMemberIndex, 1);
                         this.deleteConfirm = false;
+                        this.loading = false;
+                    })
+                    .catch(error => {
+                        this.output = error;
+                        this.loading = false;
+                    })
+
+            },
+
+            inviteMember(id) {
+                //this.loading = true;
+
+                this.$http.post('auth/clubs/member/invite/' + id, {
+                    club: this.club.id
+                })
+
+                    .then(response => {
+                        this.output = response.data;
+                        this.err = response.data.err;
                         this.loading = false;
                     })
                     .catch(error => {

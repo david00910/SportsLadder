@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ClubMembers;
+use Carbon\Carbon;
 use Carbon\Traits\Date;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -277,6 +278,72 @@ class ClubController extends Controller
         return response()->json($response);
 
 
+    }
+
+    protected function addMember(Request $request, $id) {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+        $cu = $currentUser->id;
+
+        $request->validate([
+            'club' => 'required',
+        ]);
+
+        $club = Club::find($request->club);
+
+
+        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+            try {
+
+                $club->clubMembers()->attach($id, ['doa' => \date('Y')]);
+
+
+
+            } catch (Exception $e) {
+                return response()->json([
+                    'status' => 'error',
+                    'error' => $e->errors()
+                ], 400);
+
+            }
+            return response()->json(['status' => 'success', 'msg' => 'You have successfully invited this player to your club!'], 200);
+        }
+        else {
+            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.']);
+        }
+
+
+    }
+
+    protected function inviteMember(Request $request, $id) {
+        $currentUser = JWTAuth::parseToken()->authenticate();
+        $cu = $currentUser->id;
+
+        $request->validate([
+            'club' => 'required',
+        ]);
+
+        $club = Club::find($request->club);
+
+
+        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+            try {
+
+                // Figure out a script for setting a notification for invitation.
+
+
+
+            } catch (Exception $e) {
+                return response()->json([
+                    'status' => 'error',
+                    'error' => $e->errors()
+                ], 400);
+
+            }
+            return response()->json(['status' => 'success', 'msg' => 'You have successfully invited this player to your club!'], 200);
+        }
+        else {
+            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.']);
+        }
     }
 
     protected function deleteMember(Request $request, $id) {
