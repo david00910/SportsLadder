@@ -18,6 +18,7 @@ import ClubsCreate from "./views/clubs/ClubsCreate";
 import ClubsShow from "./views/clubs/ClubsShow";
 import ClubsManager from "./views/clubs/ClubsManager";
 import NoPermission from './views/layout/NoPermission';
+import Notifications from './views/auth/Notifications';
 
 
 
@@ -167,6 +168,11 @@ const router = new VueRouter({
             path: '/403',
             name: '403',
             component: NoPermission,
+        },
+        {
+            path: '/notifications',
+            name: 'notifications',
+            component: Notifications,
         },
 
         { path: '/404', name: '404', component: NotFound },

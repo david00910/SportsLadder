@@ -58,11 +58,15 @@ Route::prefix('v1')->group(function () {
             Route::post('clubs/edit/image/{id}', 'ClubController@changeImage');
             Route::post('clubs/edit/general/{id}', 'ClubController@editInfo');
 
-            // Club Members
+                // Club Members
 
-            Route::get('clubs/members/', 'ClubController@addMemberData');
-            Route::post('clubs/member/delete/{id}', 'ClubController@deleteMember');
-            Route::post('clubs/member/invite/{id}', 'ClubController@addMember');
+                Route::get('clubs/members/', 'ClubController@addMemberData');
+                Route::post('clubs/member/delete/{id}', 'ClubController@deleteMember');
+                Route::post('clubs/member/invite/{id}', 'ClubController@inviteMember');
+
+            // NOTIFICATIONS
+
+            Route::get('notifications', 'NotificationController@indexNotification');
 
             // LOGOUT
             Route::post('logout', 'AuthController@logout');

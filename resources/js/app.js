@@ -14,26 +14,17 @@ import App from './views/layout/App';
 import Navigation from './components/Navigation';
 import Pagination from './components/Pagination';
 
+// Set Vue globally
+window.Vue = Vue;
 
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
-import VueCarousel from 'vue-carousel';
-
 import {Tabs, Tab} from 'vue-tabs-component';
 
 Vue.component('tabs', Tabs);
 Vue.component('tab', Tab);
-
-
 Vue.component('v-select', vSelect);
-
-import Roles from './mixins/Roles';
-Vue.mixin(Roles);
-
 Vue.component('pagination', Pagination);
-
-// Set Vue globally
-window.Vue = Vue;
 
 Vue.router = router;
 Vue.use(VueRouter);

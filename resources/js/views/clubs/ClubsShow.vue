@@ -25,9 +25,11 @@
                 </div>
                 <div class="col">
 
-                    <router-link :to="{ name: 'clubs.manager', params: {id: club.id} }" v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"
-                       class="btn transparent cyan-text"><i class="material-icons left cyan-text">settings</i>manage
-                        club</router-link>
+                    <router-link :to="{ name: 'clubs.manager', params: {id: club.id} }"
+                                 v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"
+                                 class="btn transparent cyan-text"><i class="material-icons left cyan-text">settings</i>manage
+                        club
+                    </router-link>
 
                     <h3>{{club.name}}</h3>
                     <h5><i class="material-icons">gavel</i> Since {{club.foundation_date}}</h5>
@@ -65,34 +67,32 @@
 
                     <h5 style="margin-bottom: 20px;">MEMBERS</h5>
 
-                    <div v-if="club.club_members.length">
+                    <div class="col s12">
 
-                        <carousel :per-page="4">
+                        <div class="card black" v-for="c in club.club_members"
+                             v-bind:key="c. id" v-if="club.club_members.length" style="max-width: 20% !important;" >
+                            <div class="card-image">
+                                <img :src="'../images/gsd.jpg'" alt="Club member profile picture">
+                            </div>
+                            <div class="card-content">
+                                <h6>{{c.first_name}} {{c.last_name}}</h6>
+                                <small>Since {{c.pivot.doa}}</small>
+                            </div>
+                            <div class="card-action">
+                                <router-link :to="{ name: 'profile' }">
+                                    View
+                                </router-link>
+                            </div>
+                        </div>
 
-                            <slide v-for="c in club.club_members" v-bind:key="c. id">
-                                <div class="col">
-                                    <img
-                                        class="responsive-img z-depth-3"
-                                        style=" background-repeat: no-repeat;
-                                        background-position: 50%;
-                                        border: 2px solid #0091ea;
-                                        " :src="'../images/gsd.jpg'" alt="Club member profile picture">
-                                    <h6>{{c.first_name}} {{c.last_name}}</h6>
-                                    <small>Since {{c.pivot.doa}}</small>
-                                    <br>
-                                    <router-link :to="{ name: 'profile' }">
-                                        <div class="btn grey darken-4">View</div>
-                                    </router-link>
-                                </div>
 
-                            </slide>
-                        </carousel>
-                        <div class="btn btn-small grey darken-4" style="margin-top: 15px;"
-                             v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"><i
-                            class="material-icons md-24">
-                            person_add
-                        </i></div>
                     </div>
+
+                    <button class="btn btn-small grey darken-4" style="margin-top: 15px;"
+                            v-if="$auth.user().role === 'administrator' || $auth.user().owner.id === club.id"><i
+                        class="material-icons md-24">
+                        person_add
+                    </i></button>
 
                     <div v-else style="padding: 15px;">
                         <h6 style="margin-bottom: 15px;">There are no club members yet.</h6>
@@ -119,7 +119,9 @@
         data() {
             return {
                 loading: false,
-                club: '',
+                club: {
+                    club_members: 'null',
+                },
             };
         },
 
@@ -142,7 +144,7 @@
 
         mounted() {
             this.getClub();
-            M.autoInit();
+            //M.autoInit();
         },
 
         created() {
@@ -204,4 +206,5 @@
     .addMember:hover {
         border: 2px solid cyan;
     }
+
 </style>

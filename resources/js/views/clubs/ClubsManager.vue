@@ -314,10 +314,18 @@
                         this.club.club_members.splice(cMemberIndex, 1);
                         this.deleteConfirm = false;
                         this.loading = false;
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
                     .catch(error => {
                         this.output = error;
                         this.loading = false;
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
 
             },
@@ -333,10 +341,19 @@
                         this.output = response.data;
                         this.err = response.data.err;
                         this.loading = false;
+
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
                     .catch(error => {
                         this.output = error;
                         this.loading = false;
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
 
             },
@@ -381,6 +398,10 @@
                         this.output = response.data;
                         this.err = response.data.err;
                         this.loading = false;
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
                     .catch(error => {
                         this.output = error;
@@ -408,11 +429,18 @@
                         this.output = response.data;
                         this.err = response.data.err;
                         this.loading = false;
+                        var self = this;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
 
                     })
                     .catch(error => {
                         this.output = error;
                         this.loading = false;
+                        setTimeout(function(){
+                            self.output = false;
+                        }, 4000);
                     })
 
 

@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f703d8a-705f-45fb-ba23-9f054b921100" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClubController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Navigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Navigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/mixins/Roles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/auth/Notifications.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/auth/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/auth/Profile.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/clubs/ClubsManager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/clubs/ClubsManager.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/clubs/ClubsShow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/clubs/ClubsShow.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -205,7 +205,13 @@
       <workItem from="1571034195649" duration="1137000" />
       <workItem from="1571121146407" duration="20433000" />
       <workItem from="1572864348152" duration="64000" />
-      <workItem from="1572937773779" duration="19873000" />
+      <workItem from="1572937773779" duration="20485000" />
+      <workItem from="1573738058065" duration="64000" />
+      <workItem from="1574061652577" duration="5425000" />
+      <workItem from="1574147100448" duration="1620000" />
+      <workItem from="1574150056863" duration="5105000" />
+      <workItem from="1574319683905" duration="170000" />
+      <workItem from="1574319884392" duration="22232000" />
     </task>
     <servers />
   </component>

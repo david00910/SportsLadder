@@ -6,11 +6,13 @@
             <div class="nav-wrapper ">
                 <a href="#" class="brand-logo right">MyLadder Manager</a><span class="badge cyan white-text">BETA</span>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><div style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-3 shake">vibration</i></div>
+                    <li><router-link :to="{ name: 'notifications'}"  style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-3 shake">vibration</i></router-link>
                     </li>
-                    <li><div style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-4">vibration</i></div>
+
+                    <li><router-link :to="{ name: 'notifications'}"  style="cursor: pointer !important; padding: 0 7px 0 7px !important;"><i class="small material-icons cyan-text text-accent-4">vibration</i></router-link>
                     </li>
                 </ul>
+
             </div>
         </nav>
 
@@ -49,37 +51,37 @@
                     </router-link>
                 </li>
 
-                <li>
+                <li class="hoverover">
 
                     <router-link class="white-text" :to="{ name: 'home' }"><i class="material-icons white-text"
                                                                               style="font-size:36px;">home</i>Home
                     </router-link>
                 </li>
-                <li>
+                <li class="hoverover">
                     <router-link class="white-text" :to="{ name: 'results.index' }"><i class="material-icons white-text"
                                                                                        style="font-size:36px;">assignment</i>Match
                         results
                     </router-link>
                 </li>
-                <li>
+                <li class="hoverover">
                     <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'users.index' }"><i
                         class="material-icons white-text"
                         style="font-size:36px;">supervised_user_circle</i>Leaderboard
                     </router-link>
                 </li>
-                <li>
+                <li class="hoverover">
                     <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'clubs.index' }"><i
                         class="material-icons white-text"
                         style="font-size:36px;">group_work</i>Clubs
                     </router-link>
                 </li>
-                <li>
+                <li class="hoverover">
                     <router-link v-if="$auth.check()" class="white-text" :to="{ name: 'dashboard' }"><i
                         class="material-icons white-text"
                         style="font-size:36px;">event</i> Global events
                     </router-link>
                 </li>
-                <li>
+                <li class="hoverover">
                     <router-link class="white-text" :to="{ name: 'home' }"><i class="material-icons white-text"
                                                                               style="font-size:36px;">info</i>About
                     </router-link>
@@ -89,34 +91,34 @@
             <div class="divider cyan accent-3"></div>
             <ul>
 
-                <li v-if="$auth.check() && $auth.user().role === 'administrator'">
+                <li class="hoverover" v-if="$auth.check() && $auth.user().role === 'administrator'">
                     <router-link class="white-text" :to="{ name: 'dashboard' }"><i class="material-icons white-text"
                                                                                    style="font-size:36px;">settings</i>ADMIN
                         DASHBOARD
                     </router-link>
                 </li>
 
-                <li v-if="$auth.check() && $auth.user().role === 'administrator' || $auth.check() && $auth.user().role === 'club_owner'">
+                <li class="hoverover" v-if="$auth.check() && $auth.user().role === 'administrator' || $auth.check() && $auth.user().role === 'club_owner'">
                     <router-link class="white-text" :to="{ name: 'clubs.manager', params: {id: $auth.user().owner.id} }"><i class="material-icons white-text"
                                                                                    style="font-size:36px;">star</i>CLUB MANAGER
                     </router-link>
                 </li>
 
 
-                <li v-if="$auth.check()">
+                <li class="hoverover" v-if="$auth.check()">
                     <a class="white-text" id="logout-link" href="#" @click.prevent="logOut"><i
                         class="material-icons white-text"
                         style="font-size:36px;">exit_to_app</i>Logout</a>
                 </li>
 
 
-                <li v-if="!$auth.check()">
+                <li class="hoverover" v-if="!$auth.check()">
                     <router-link class="white-text" :to="{ name: 'login' }"><i class="material-icons white-text"
                                                                                style="font-size:36px;">person</i>Sign in
                     </router-link>
                 </li>
 
-                <li v-if="!$auth.check()">
+                <li class="hoverover" v-if="!$auth.check()">
                     <router-link class="white-text" :to="{ name: 'signup' }"><i class="material-icons white-text"
                                                                                 style="font-size:36px;">person</i>Sign
                         up
@@ -187,7 +189,8 @@
 
                 });
 
-            }
+            },
+
 
         }
 
@@ -227,11 +230,11 @@
 
     }
 
-    #nav-mobile li:hover {
+    #nav-mobile .hoverover:hover {
         background-color: rgba(0, 110, 255, 0.13);
     }
 
-    .sidenav li:hover {
+    .hoverover:hover {
         background-color: rgba(0, 110, 255, 0.13);
     }
 
@@ -241,25 +244,75 @@
         transform: scale(1.01);
     }
 
-    @-webkit-keyframes spaceboots {
-        0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
-        10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
-        20% { -webkit-transform: translate(-2px, 0px) rotate(1deg); }
-        30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
-        40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
-        50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
-        60% { -webkit-transform: translate(-2px, 1px) rotate(0deg); }
-        70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
-        80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
-        90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
-        100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+    @-webkit-keyframes shake-bottom {
+        0%,
+        100% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+        10% {
+            -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+        }
+        20%,
+        40%,
+        60% {
+            -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+        }
+        30%,
+        50%,
+        70% {
+            -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+        }
+        80% {
+            -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+        }
+        90% {
+            -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+        }
+    }
+    @keyframes shake-bottom {
+        0%,
+        100% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+        10% {
+            -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+        }
+        20%,
+        40%,
+        60% {
+            -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+        }
+        30%,
+        50%,
+        70% {
+            -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+        }
+        80% {
+            -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+        }
+        90% {
+            -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+        }
     }
     .shake {
-        -webkit-animation-name: spaceboots;
-        -webkit-animation-duration: 0.8s;
-        -webkit-transform-origin:50% 50%;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: ease;
+        -webkit-animation: shake-bottom 0.9s steps(5, end) infinite both;
+        animation: shake-bottom 0.9s steps(5, end) infinite both;
     }
 
 </style>

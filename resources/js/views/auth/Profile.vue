@@ -6,7 +6,7 @@
                     <div class="card" style="margin: 0 !important;">
                         <div class="card-image">
                             <img style="margin: 0 !important;" :src="'./images/gsd.jpg'">
-                            <span class="card-title" style="letter-spacing: 2px !important;">KOLOMPÁR BÉCI</span>
+                            <span class="card-title" style="letter-spacing: 2px !important;">First name Last name</span>
                         </div>
                         <div class="card-content grey-text">
                             <p>I am a very simple card. I am good at containing small bits of information.

@@ -12,6 +12,7 @@ use App\Result;
 use App\Club;
 use App\Address;
 use App\ZipCode;
+use App\Notification;
 use Illuminate\Support\Facades\Storage;
 use JWTAuth;
 use Image;
@@ -216,11 +217,15 @@ class ClubController extends Controller
 
         ]);
 
-        try {
+        $club = Club::find($id);
+        $currentUser = JWTAuth::parseToken()->authenticate();
+        $cu = $currentUser->id;
 
-            $club = Club::find($id);
+        if ($currentUser->hasRole('administrator') || $club->owner === $currentUser->id) {
 
-            $zipCode = ZipCode::where('zip', '=', $request->zip)->first();
+            try {
+
+                $zipCode = ZipCode::where('zip', '=', $request->zip)->first();
 
 
                 if ($zipCode === null) {
@@ -248,15 +253,19 @@ class ClubController extends Controller
                 $club->save();
 
 
-        } catch (Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'error' => $e->errors()
-            ], 400);
+            } catch (Exception $e) {
+                return response()->json([
+                    'status' => 'error',
+                    'error' => $e->errors()
+                ], 400);
 
+            }
+
+            return response()->json(['status' => 'success', 'msg' => 'You have successfully edited the general information of your club!'], 200);
         }
-
-        return response()->json(['status' => 'success', 'msg' => 'You have successfully edited the general information of your club!'], 200);
+        else {
+            return response()->json(['status' => 'error', 'msg' => 'Only administrators and club owners can edit club data!'], 401);
+        }
     }
 
     protected function addMemberData() {
@@ -288,10 +297,11 @@ class ClubController extends Controller
             'club' => 'required',
         ]);
 
-        $club = Club::find($request->club);
+        $club = Club::find(request()->club);
 
 
-        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+        if ($currentUser->hasRole('administrator') || $club->owner === $currentUser->id) {
+
             try {
 
                 $club->clubMembers()->attach($id, ['doa' => \date('Y')]);
@@ -308,7 +318,7 @@ class ClubController extends Controller
             return response()->json(['status' => 'success', 'msg' => 'You have successfully invited this player to your club!'], 200);
         }
         else {
-            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.']);
+            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.', 401]);
         }
 
 
@@ -325,14 +335,20 @@ class ClubController extends Controller
         $club = Club::find($request->club);
 
 
-        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+        if ($currentUser->hasRole('administrator') || $club->owner === $currentUser->id) {
             try {
 
-                // Figure out a script for setting a notification for invitation.
-
-
+                DB::beginTransaction();
+                // script for setting a notification for invitation.
+                $notification = new Notification();
+                $notification->type = 'Invitation to a club';
+                $notification->message = $currentUser->first_name.' '.$currentUser->last_name.' invited you to '.$club->name;
+                $notification->user_id = $id;
+                $notification->save();
+                DB::commit();
 
             } catch (Exception $e) {
+                DB::rollback();
                 return response()->json([
                     'status' => 'error',
                     'error' => $e->errors()
@@ -342,7 +358,7 @@ class ClubController extends Controller
             return response()->json(['status' => 'success', 'msg' => 'You have successfully invited this player to your club!'], 200);
         }
         else {
-            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.']);
+            return response()->json(['err' => 'Access denied: only club owners or administrators can invite members.'], 401);
         }
     }
 
@@ -357,7 +373,7 @@ class ClubController extends Controller
         $club = Club::find($request->club);
 
 
-        if ($currentUser->hasRole('administrator') || $currentUser->owner === $club) {
+        if ($currentUser->hasRole('administrator') || $club->owner === $currentUser->id) {
             try {
 
                 $club->clubMembers()->detach($id);
